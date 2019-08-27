@@ -5,6 +5,8 @@ import operator
 import sys
 from random import random
 import math
+import time
+import datetime
 
 def getLatestCompetition():
    # Download the Golden Turtle list and find the last entry on it
@@ -32,6 +34,12 @@ def getVotesForGame(listitem):
 
    return voters
 
+def getCompetitionMonth(compxml):
+   postdate = compxml.find('postdate')
+   datestr = postdate.text
+   dt = time.strptime(datestr, '%a, %d %b %Y %H:%M:%S %z')
+   return dt
+
 def getCompetitionResults(compxml):
    prog = re.compile('\[imageid=(\d+)(\D*)\]', re.IGNORECASE)
 
@@ -44,7 +52,7 @@ def getCompetitionResults(compxml):
       username = item.attrib['username']
       votes = int(item.attrib['thumbs'])
 
-	  # Search through the body for the first image id
+      # Search through the body for the first image id
       body = item[0]
       match = prog.search(body.text)
       imageid = int(match.groups()[0])
@@ -55,18 +63,43 @@ def getCompetitionResults(compxml):
       allvoters.update(voters)
 
    # Sort all of the results
-   return { "results" : sorted(results, key=operator.itemgetter(2), reverse=True), "voters": list(voters) }
+   return { "results" : sorted(results, key=operator.itemgetter(2), reverse=True), 
+            "voters": list(voters),
+            "month": time.strftime('%Y-%m-%d', getCompetitionMonth(compxml))}
 
-# Get the latest list or a specific one
-if (len(sys.argv) > 1):
-   compxml = getCompetitionXml(sys.argv[1])
-else:
-   compxml = getLatestCompetition()
+def getPlaces(results,halloffame):
+   # Assume the first row is the current winner (it is if sorted properly)   
+   maxVotes = results[0][2]
+   
+   place = 1
+   
+   rows = []
+   for res in results:
+      if res[0] not in halloffame:
+         if res[2] < maxVotes:
+            place = place + 1
+            maxVotes = res[2]
+            if place > 3:
+               break
+               
+         insRow = (res[0], res[1], res[2], place)
+         rows.append(insRow)
+      
+   return rows
 
-compresults = getCompetitionResults(compxml)
-for entry in compresults['results']:
-   print("{} scored {} for {}".format(entry[0],entry[2],entry[1]))
+if __name__ == "__main__":
+   # Get the latest list or a specific one
+   if (len(sys.argv) > 1):
+      compxml = getCompetitionXml(sys.argv[1])
+   else:
+      compxml = getLatestCompetition()
 
-print()
-thumber = int( math.floor(random() * (len(compresults['voters'])+1) ))
-print("Random thumber is {}".format( compresults['voters'][thumber] ))
+   compresults = getCompetitionResults(compxml)
+
+   print(compresults['month'])
+   for entry in compresults['results']:
+      print("{} scored {} for {}".format(entry[0],entry[2],entry[1]))
+
+   print()
+   thumber = int( math.floor(random() * (len(compresults['voters'])) ))
+   print("Random thumber is {}".format( compresults['voters'][thumber] ))
