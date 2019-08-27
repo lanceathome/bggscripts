@@ -14,35 +14,22 @@ def getHallOfFame(c):
 # c - Connection to database
 # month - ISO month for the results
 # results - List of tuples ordered by votes. (username, imageid, votes )
-def addResult(c, month, results):
-   # Use the hall of fame to exclude points from winners who are already too good
-   halloffame = getHallOfFame(c)
+# places - List of tuples of (username, place)
+def addResult(c, month, results, places):
 
-   # Assume the first row is the current winner (it is if sorted properly)   
-   maxVotes = results[0][2]
-   # Points for each place
-   placePoints = [5,3,1,0]
-   
+   placePoints = [5,3,1]
+
+   # Map the 
+   userPoints = {}
+   for placed in places:
+      userPoints[placed[0]] = placePoints[placed[3]-1]
+
    rows = []
    for res in results:
-      if len(placePoints) > 0:
-         points = placePoints[0]
-      else:
-         points = 0
-
-      # A hall of fame user doesn't get any points
-      if res[0] in halloffame:
-         points = 0
-      else:
-         # Have we gone to a lower place for points
-         if res[2] < maxVotes:       
-            # Update the points if this is a lower place
-            if len(placePoints) > 0:
-               placePoints.pop(0)
-               maxVotes = res[2]
-            else:
-               maxVotes = -1
-
+      points = 0
+      if res[0] in userPoints:
+         points = userPoints[res[0]]
+   
       # Build a results row
       insRow = (res[0], month, res[2], res[1], points)
       rows.append(insRow)
@@ -61,7 +48,7 @@ def getTable(c):
    return c.execute('SELECT user, SUM(points) AS sumpoints FROM results GROUP BY user ORDER BY sumpoints DESC').fetchall()
 
 
-# Prepare an initial database
+# Prepare an initial database, using data from April 2019 list 51364
 if __name__ == "__main__":
    conn = sqlite3.connect('goldenTurtle.db')
    c = conn.cursor()

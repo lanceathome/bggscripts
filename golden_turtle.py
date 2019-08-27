@@ -23,10 +23,13 @@ c = conn.cursor()
 
 # Get the competition information
 compresults = get_turtle_result.getCompetitionResults(compxml)
-store_turtle_result.addResult(c,compresults['month'],compresults['results'])
-
+hallOfFamers = store_turtle_result.getHallOfFame(c)
+winners = get_turtle_result.getPlaces(compresults['results'],hallOfFamers)
 # Find who the random thumber is
 thumber = int( math.floor(random() * len(compresults['voters'])))
+
+# Save the information
+store_turtle_result.addResult(c,compresults['month'],compresults['results'],winners)
 store_turtle_result.addThumber(c,compresults['month'],compresults['voters'][thumber])
 
 # Save the information
@@ -46,8 +49,6 @@ As ever, congratulations to all last month's winners:
 """, file = f)
 
 # Show the winners
-hallOfFamers = store_turtle_result.getHallOfFame(c)
-winners = get_turtle_result.getPlaces(compresults['results'],hallOfFamers)
 for row in winners:
    # Only rows with points have placed
    place = "1st"
@@ -86,7 +87,7 @@ print("""
 """, file = f)
 
 for result in table:
-   if result[1] < 100:
+   if result[1] > 0 and result[1] < 100:
       print("{} - {}".format(result[0],result[1]), file = f)
 
 
