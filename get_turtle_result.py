@@ -57,7 +57,7 @@ def getCompetitionResults(compxml):
       match = prog.search(body.text)
       imageid = int(match.groups()[0])
 
-      results.append( (username, imageid, votes ))
+      results.append( (username, imageid, votes, listitem) )
 
       voters = getVotesForGame(listitem)
       allvoters.update(voters)
