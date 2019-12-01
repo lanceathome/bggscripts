@@ -2,7 +2,7 @@ import sqlite3
 
 def createTables(c):
    # Create table for each months results
-   c.execute("CREATE TABLE results (user text, month text, votes int, image int, points int)")
+   c.execute("CREATE TABLE results (user text, month text, votes int, image int, points int, encourage int, geeklistitemid int)")
    c.execute("CREATE TABLE thumber (user text, month text)")
 
 def getHallOfFame(c):
@@ -13,7 +13,7 @@ def getHallOfFame(c):
 
 # c - Connection to database
 # month - ISO month for the results
-# results - List of tuples ordered by votes. (username, imageid, votes )
+# results - List of tuples ordered by votes. (username, imageid, votes, geeklistitemid )
 # places - List of tuples of (username, place)
 def addResult(c, month, results, places):
 
@@ -31,11 +31,12 @@ def addResult(c, month, results, places):
          points = userPoints[res[0]]
    
       # Build a results row
-      insRow = (res[0], month, res[2], res[1], points)
+	  # user text, month text, votes int, image int, points int, encourage int, geeklistitemid int
+      insRow = (res[0], month, res[2], res[1], points, 0, res[3])
       rows.append(insRow)
 
    # Now we can save this data
-   c.executemany('INSERT INTO results VALUES (?,?,?,?,?)', rows)   
+   c.executemany('INSERT INTO results VALUES (?,?,?,?,?,?,?)', rows)   
 
 def addThumber(c, dt, user):
    c.execute("INSERT INTO thumber(user, month) VALUES (?,?)",(dt,user))

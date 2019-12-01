@@ -61,3 +61,14 @@ python get_turtle_result.py
 The random thumber will be changed each time you run the script and will likely not be the value used when
 you run the golden_turtle.py results.
 
+
+To find the number of times users from a current entry have appeared in the list use
+```
+select user,count(*),sum(points) from results where user in (select user from results where month='2019-11-01') group by user;
+```
+
+And to get just those people for encouragement awards
+
+```
+select user, entered from (select  user,count(*) as entered,sum(points) as pts from results where user in (select user from results where month='2019-11-01') group by user) where pts=0;
+```
