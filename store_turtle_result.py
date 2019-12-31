@@ -48,6 +48,33 @@ def getTable(c):
    table = []
    return c.execute('SELECT user, SUM(points) AS sumpoints FROM results GROUP BY user ORDER BY sumpoints DESC').fetchall()
 
+# Fetch a list of tuples containing the usernames, the number of times they have entered the competition,
+# the number of encouragement awards they've received and the months votes, image and geeklistitemid for the given month.
+# This list only returns users that have never received any points.
+def getEncourageRecommendation(c,month):
+   return c.execute('''SELECT rec.user, entered, encouraged, votes, image, geeklistitemid FROM
+                       (SELECT user,count(*) as entered,sum(points) AS pts, SUM(encourage) AS encouraged 
+					    FROM results 
+					    WHERE user in (select user from results where month=?) 
+					    GROUP BY user) AS rec 
+					   left join 
+					   (select user, votes, image, geeklistitemid 
+					    FROM results 
+						WHERE month=?) AS monthentry 
+					   ON rec.user = monthentry.user 
+					   WHERE pts=0
+					   ORDER BY entered''',(month,month)).fetchall()
+
+# Set the encourage value for the given users in the given month
+# month - String of month being displayed
+# encouraged - List of users to encourage
+def saveEncouragements(c,month,encouraged):
+  for encourage in encouraged:
+     c.execute('UPDATE results SET encourage=1 WHERE user=? AND month=?',(encourage,month))
+
+# Get a list of user names, image and geeklistid who were encouraged for the month
+def getEncouragements(c,month):
+  return c.execute('SELECT user, image, geeklistitemid FROM results WHERE encourage=1 AND month=?',(month,)).fetchall()
 
 # Prepare an initial database, using data from April 2019 list 51364
 if __name__ == "__main__":
@@ -60,7 +87,7 @@ if __name__ == "__main__":
  ("Roolz", 101), 
  ("Vinssounet", 77), 
  ("Tadpoleface", 67),
- ("muzza", 63),
+ ("Muzza", 63),
  ("Stratagon", 51),
  ("Jormi_Boced", 50),
  ("oneilljgf", 46),

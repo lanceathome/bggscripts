@@ -69,20 +69,26 @@ def getCompetitionResults(compxml):
 
 def getPlaces(results,halloffame):
    # Assume the first row is the current winner (it is if sorted properly)   
-   maxVotes = results[0][2]
+   maxVotes = -1
    
    place = 1
    
    rows = []
    for res in results:
       if res[0] not in halloffame:
-         if res[2] < maxVotes:
+         # The first entry we accept is the first place - this will exclude any hall of fame members who win the competition
+         if maxVotes < 0:
+            place = 1
+            maxVotes = res[2]
+         # If the person we've accepted has less votes than the last person then increase their place
+         elif res[2] < maxVotes:
             place = place + 1
             maxVotes = res[2]
+            # We only take 1st, 2nd and 3rd. After that abort finding places
             if place > 3:
                break
-               
-         insRow = (res[0], res[1], res[2], place)
+         
+         insRow = (res[0], res[1], res[2], place, res[3])
          rows.append(insRow)
       
    return rows
