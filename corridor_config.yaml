@@ -1,0 +1,10 @@
+{
+  sourceLists: [209809],
+  filter: 6,
+  outfile: "corridor-{}.yaml",
+  expansions: { 
+    124708: [159458, 144777], # Mice and Mystics
+    164153: [265523, 278326, 251066, 226839, 194897, 181621], # Imperial Assault
+    156474: [154939], # MERCS
+  }
+}
