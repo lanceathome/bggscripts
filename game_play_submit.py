@@ -11,6 +11,8 @@ from urllib.request import urlopen
 from urllib.error import HTTPError
 import requests
 
+from dateutil.relativedelta import *
+
 # pip install requests
    
 # My session information - password and username should be passed on command line
@@ -24,8 +26,11 @@ with open(sys.argv[1], 'r') as stream:
 listid = int(sys.argv[2])
 
 
+# Default to the last month, or use a custom date
 playdate = date.fromisoformat( config['playDate'] + "-01" )
-ignorePlayMonth = date(playdate.year, playdate.month-1, 1).strftime("%Y-%m")
+ignorePlayDate = date( playdate.year, playdate.month, 1)
+ignorePlayDate = ignorePlayDate+relativedelta(months=-1)
+ignorePlayMonth = date(ignorePlayDate.year, ignorePlayDate.month, 1).strftime("%Y-%m")
 print ("Dont show plays in {}".format(ignorePlayMonth))
 
 
