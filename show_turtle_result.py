@@ -11,7 +11,7 @@ import store_turtle_result
 # pip install Mako
 from mako.template import Template
 
-def outputResults(winners, resultTable, thumber, month, hallOfFamers, encouragements):
+def outputResults(winners, resultTable, thumber, month, hallOfFamers, encouragements, numVoters):
    f = open("results-{}.txt".format(month),"w+")
 
    print("""
@@ -46,10 +46,7 @@ As ever, congratulations to all last month's winners:
       print("[ImageID={}]".format(encourage[1]), file=f)
    
    # Show the thumber
-   print("""
-Our thumber of the month is:
-
-""", file = f)
+   print("Of {} voters our thumber of the month is:".format(numVoters), file=f);
    print("[username={}]".format(thumber), file = f)
    print("""
 

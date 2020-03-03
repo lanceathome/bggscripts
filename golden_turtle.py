@@ -31,7 +31,7 @@ thumber = int( math.floor(random() * len(compresults['voters'])))
 
 # Save the information
 store_turtle_result.addResult(c,compresults['month'],compresults['results'],winners)
-store_turtle_result.addThumber(c,compresults['month'],compresults['voters'][thumber])
+store_turtle_result.addThumber(c,compresults['month'],compresults['voters'][thumber], len(compresults['voters']))
 
 # Ask the user which entries should win the encouragement award
 encourage = store_turtle_result.getEncourageRecommendation(c,compresults['month'])
@@ -54,4 +54,4 @@ resultTable = store_turtle_result.getTable(c)
 encouragementTable = store_turtle_result.getEncouragements(c,compresults['month'])
 
 # Output the results
-show_turtle_result.outputResults(winners, resultTable, compresults['voters'][thumber], compresults['month'], hallOfFamers, encouragementTable)
+show_turtle_result.outputResults(winners, resultTable, compresults['voters'][thumber], compresults['month'], hallOfFamers, encouragementTable, len(compresults['voters']))

@@ -15,6 +15,8 @@ def getLatestCompetition():
    # We want geeklist/item[-1]/@objectid to find the last competition geeklist/51364
    item = masterxml[-1]
    compid = item.attrib['objectid']
+   
+   print(compid)
 
    # Now get the competition information
    return getCompetitionXml(compid)
@@ -64,7 +66,7 @@ def getCompetitionResults(compxml):
 
    # Sort all of the results
    return { "results" : sorted(results, key=operator.itemgetter(2), reverse=True), 
-            "voters": list(voters),
+            "voters": list(allvoters),
             "month": time.strftime('%Y-%m-%d', getCompetitionMonth(compxml))}
 
 def getPlaces(results,halloffame):
@@ -108,4 +110,4 @@ if __name__ == "__main__":
 
    print()
    thumber = int( math.floor(random() * (len(compresults['voters'])) ))
-   print("Random thumber is {}".format( compresults['voters'][thumber] ))
+   print("Random thumber is {} of {}".format( compresults['voters'][thumber], len(compresults['voters']) ))
