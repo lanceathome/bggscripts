@@ -47,7 +47,7 @@ expansions: {
               20587: [56641, 178496, 108691, 241384], # Nuts!
               12585: [28451, 119608], # Baptism of Fire
              159160: [128154, 138515, 165570], # Battlegroup (Kursk)
-               3072: [110346], # Necromunda
+               3072: [110346, 234521], # Necromunda
              131024: [227314], # Kensei
               35684: [186961], # Pulp City
                9296: [4978, 13553,138670, 213926], # Warzone
@@ -59,10 +59,10 @@ expansions: {
              177354: [232166], # Frostgrave
              103670: [216066], # Dust Warfare
               13936: [122751, 172696, 229988], # Dark Age
-             137141: [237181], # Batman
+             137141: [237181, 300420], # Batman
               12129: [12128, 64778], # Giant Monster Rampage 
              207653: [154307, 256066], # Kill Team
-             195242: [256962], # Tanks
+             195242: [256962, 304620], # Tanks
               28805: [259435, 260234], # Lord of the Rings
              207653: [256066, 154307], # Kill Team
              139771: [240143], # Star Trek Attack Wing
@@ -75,8 +75,9 @@ expansions: {
               41837: [113825], # Force on Force
              233571: [283474], # Star Wars: Legion
               37352: [281151, 265477], # Fistful of Lead
-              15827: [224832, 279418], # Blitzkrieg Commander
+              15827: [224832, 279418, 303507], # Blitzkrieg Commander
              297160: [297165], # From Gilgamesh to Grant
+              83755: [106523], # Tomorrow's War
              
               15985: [712, 2288, 3071, 1676, 10223, 212445], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333], # Deadzone 
