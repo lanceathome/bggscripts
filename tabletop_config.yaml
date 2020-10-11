@@ -5,14 +5,14 @@ outfile: "tabletop-{}.yaml",
 expansions: { 
              203800: [161126, 36367], # Dust Tactics/Battlefield/1947
               52328: [147537, 281657], # Malifaux 1.5/2/3
-               2162: [11106, 229427, 160044, 126613, 37165, 13362, 203122, 33048, 145847], # Warhammer 40K
+               2162: [11106, 229427, 160044, 126613, 37165, 13362, 203122, 33048, 145847, 314243], # Warhammer 40K
               10431: [5316], # Epic Armageddon with Epic 40K
              119866: [31552, 121016, 129165, 108842, 22510, 39596, 9203], # Wings of Glory and Wings of War WWI
              107148: [131183, 121042, 125679, 42306, 39333, 36482, 216710], # Wings of Glory WWII
                5686: [129285], # StarGrunt II and I
                4510: [30684], # Johnny Reb III and older version
                4192: [268266, 268248, 268185, 268183, 268159, 268098, 130552, 27658, 74408], # Warhammer and all versions, exc 9th Age
-              11168: [40411, 128345, 130997], # Flames of War
+              11168: [40411, 128345, 130997, 149138], # Flames of War
               21133: [163399, 203312], # Infinity
               26855: [33413, 109001], # Star Army 5150
                1540: [31759, 142526], # Battletech
@@ -56,7 +56,7 @@ expansions: {
               12034: [21052], # Tactica
              220248: [191312, 264685, 220249, 264748], # Grimdark Future
              137958: [236934, 174116, 236938], # Wild West Exodus
-             177354: [232166], # Frostgrave
+             177354: [232166, 317519], # Frostgrave
              103670: [216066], # Dust Warfare
               13936: [122751, 172696, 229988], # Dark Age
              137141: [237181, 300420], # Batman
@@ -78,6 +78,8 @@ expansions: {
               15827: [224832, 279418, 303507], # Blitzkrieg Commander
              297160: [297165], # From Gilgamesh to Grant
               83755: [106523], # Tomorrow's War
+             236370: [310947], # Blood Red Skies
+             134524: [301712], # Lion Rampant
              
               15985: [712, 2288, 3071, 1676, 10223, 212445], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333], # Deadzone 
@@ -90,6 +92,7 @@ expansions: {
               11170: [27976, 54361], # Heroscape
                3439: [198142], #Heroclix
               32674: [248641], # Monsterpocalypse,
-             224597: [261594, 287754] # Warhammer Underworlds Shadespire
+             224597: [261594, 287754], # Warhammer Underworlds Shadespire
+             287899: [314837], # Aeronautica Imperialis
 }
 }
