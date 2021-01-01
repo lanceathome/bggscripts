@@ -81,8 +81,9 @@ expansions: {
              236370: [310947], # Blood Red Skies
              134524: [301712], # Lion Rampant
              308356: [312183], # Knyghte, Pyke & Sworde: Medieval Mass Skirmish
+               5504: [40679, 299911], # Napoleons Battles
              
-              15985: [712, 2288, 3071, 1676, 10223, 212445], # Bloodbowl and sub entries
+              15985: [712, 2288, 3071, 1676, 10223, 212445, 318472], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333], # Deadzone 
              129731: [144144, 145141, 146014, 149178, 155411, 224141], # Dreadball
              101929: [113667], # Sergeants Miniatures Game
@@ -95,5 +96,6 @@ expansions: {
               32674: [248641], # Monsterpocalypse,
              224597: [261594, 287754], # Warhammer Underworlds Shadespire
              287899: [314837], # Aeronautica Imperialis
+             247104: [320698], # Blitz bowl
 }
 }

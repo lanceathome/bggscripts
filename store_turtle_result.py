@@ -46,7 +46,10 @@ def getResults(c,month):
 
 def getTable(c):
    table = []
-   return c.execute('SELECT user, SUM(points) AS sumpoints FROM results GROUP BY user ORDER BY sumpoints DESC').fetchall()
+   query = ("SELECT user, sumpoints "
+            "FROM (SELECT user, SUM(points) AS sumpoints, MAX(DATE(month)) AS lastEntry FROM results GROUP BY user) "
+            "WHERE lastEntry >= DATE('now','-12 months') ORDER BY sumpoints DESC")
+   return c.execute(query).fetchall()
 
 # Fetch a list of tuples containing the usernames, the number of times they have entered the competition,
 # the number of encouragement awards they've received and the months votes, image and geeklistitemid for the given month.
