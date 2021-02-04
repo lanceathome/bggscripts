@@ -63,7 +63,7 @@ Thanks to everyone who entered and tipped last month and good luck to all this m
 """, file = f)
 
    for result in resultTable:
-      if result[1] > 0 and result[1] < 100:
+      if result[1] >= 0 and result[1] < 100:
          if result[0] in winnerNames:
             fmt = "[b]{}[/b] - {}"
          else:
