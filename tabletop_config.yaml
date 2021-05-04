@@ -87,6 +87,7 @@ expansions: {
               20241: [24314, 62708, 169192], # SuperSystem
              126119: [306910, 306911], # Muskets and Tomahawks
               25421: [298584], # Action Stations!
+             313016: [178600], # The Witch Born
              
               15985: [712, 2288, 3071, 1676, 10223, 212445, 318472], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333], # Deadzone 
@@ -99,7 +100,7 @@ expansions: {
               11170: [27976, 54361], # Heroscape
                3439: [198142], #Heroclix
               32674: [248641], # Monsterpocalypse,
-             224597: [261594, 287754], # Warhammer Underworlds Shadespire
+             224597: [261594, 287754, 326624], # Warhammer Underworlds Shadespire
              287899: [314837], # Aeronautica Imperialis
              247104: [320698], # Blitz bowl
              186751: [331398], # Mythic battles
