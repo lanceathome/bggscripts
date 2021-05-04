@@ -65,7 +65,7 @@ expansions: {
              195242: [256962, 304620], # Tanks
               28805: [259435, 260234], # Lord of the Rings
              207653: [256066, 154307], # Kill Team
-             139771: [240143], # Star Trek Attack Wing
+             139771: [240143, 275972], # Star Trek Attack Wing
              190700: [254052], # Team Yankee
              270680: [270906], # Cruel Seas
              265672: [259015], # Strontium Dog
@@ -85,6 +85,8 @@ expansions: {
               40544: [306898], # Beneath the Lily Banners
               36598: [305032], # Impetus
               20241: [24314, 62708, 169192], # SuperSystem
+             126119: [306910, 306911], # Muskets and Tomahawks
+              25421: [298584], # Action Stations!
              
               15985: [712, 2288, 3071, 1676, 10223, 212445, 318472], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333], # Deadzone 
