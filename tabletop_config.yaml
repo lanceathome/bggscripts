@@ -13,7 +13,7 @@ expansions: {
                4510: [30684], # Johnny Reb III and older version
                4192: [268266, 268248, 268185, 268183, 268159, 268098, 130552, 27658, 74408], # Warhammer and all versions, exc 9th Age
               11168: [40411, 128345, 130997, 149138], # Flames of War
-              21133: [163399, 203312], # Infinity
+              21133: [163399, 203312, 326767, 312724], # Infinity
               26855: [33413, 109001], # Star Army 5150
                1540: [31759, 142526], # Battletech
               29522: [10697, 41604, 183033], # Chain Reaction 2
