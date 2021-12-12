@@ -95,7 +95,8 @@ expansions: {
              253048: [310781], # legends-signum-battle-vallor
               35187: [305265], # Panzer Korps
              352401: [352408], # The Red Book of the Elf King
-
+             276925: [322523, 351652], #Warcry
+             
               15985: [712, 2288, 3071, 1676, 10223, 212445, 318472], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333, 350793], # Deadzone 
              129731: [144144, 145141, 146014, 149178, 155411, 224141], # Dreadball
@@ -113,5 +114,6 @@ expansions: {
              186751: [331398], # Mythic battles
              244654: [295284, 264820, 279492, 254381, 246783], # Wildlands
              285902: [313893], # Riot Quest
+
 }
 }
