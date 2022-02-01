@@ -15,7 +15,7 @@ expansions: {
               11168: [40411, 128345, 130997, 149138], # Flames of War
               21133: [163399, 203312, 326767, 312724], # Infinity
               26855: [33413, 109001], # Star Army 5150
-               1540: [31759, 142526], # Battletech
+               1540: [31759, 142526, 283768, 296694, 333174, 284658], # Battletech
               29522: [10697, 41604, 183033], # Chain Reaction 2
                5835: [6700, 6699, 27480], # Command Decision
                4741: [67254, 28681, 17277, 17278, 199076, 19679, 74771, 209809], # Warmachine & Hordes
@@ -28,7 +28,7 @@ expansions: {
              127493: [164848, 205877], # Bolt Action
               30804: [182544], # Song of Blades and Heroes
               37906: [192392, 192393, 192394], # Firestorm Armada
-             135732: [183968], # Beyond the Gates of Antares
+             135732: [183968, 204136, 215000], # Beyond the Gates of Antares
              196168: [196169, 196170, 196171], #Torri: Buke Starter Box
              194812: [194810, 194813], # Marvel Universe Miniature Game,
                7950: [8049], # Chronopia
@@ -96,6 +96,9 @@ expansions: {
               35187: [305265], # Panzer Korps
              352401: [352408], # The Red Book of the Elf King
              276925: [322523, 351652], #Warcry
+             267404: [320680], #  Warlords of Erehwon
+             320021: [320817], # Armada Mantic
+             193725: [321476, 298480], # Blood and Plunder
              
               15985: [712, 2288, 3071, 1676, 10223, 212445, 318472], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333, 350793], # Deadzone 
