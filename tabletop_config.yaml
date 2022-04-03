@@ -134,7 +134,7 @@ expansions: {
              186751: [331398], # Mythic battles
              244654: [295284, 264820, 279492, 254381, 246783], # Wildlands
              285902: [313893], # Riot Quest
-             240271: [324657] # Core Space
+             240271: [324657], # Core Space
              158876: [241658], # British vs Pirates             
    }
 }
