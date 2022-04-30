@@ -13,8 +13,10 @@ import requests
 
 # pip install requests
    
-# My session information - password and username should be passed on command line
-cookie = {'bggusername':'EyeLost', 'bggpassword':'6qimq8jouonhvw3968t4dalohdvasv4k'}
+# config requires "bggusername" and "bggpassword", where the password is the session key,
+# not the raw password
+with open('config.json') as json_file:
+  cookie = json.load(json_file)
 
 with open(sys.argv[1], 'r') as stream:
   config = yaml.safe_load(stream)

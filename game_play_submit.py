@@ -15,10 +15,10 @@ from dateutil.relativedelta import *
 
 # pip install requests
    
-# My session information - password and username should be passed on command line
-cookie = {'bggusername':'EyeLost', 'bggpassword':'6qimq8jouonhvw3968t4dalohdvasv4k'}
-
-
+# config requires "bggusername" and "bggpassword", where the password is the session key,
+# not the raw password
+with open('config.json') as json_file:
+  cookie = json.load(json_file)
 
 with open(sys.argv[1], 'r') as stream:
   config = yaml.safe_load(stream)
@@ -59,6 +59,9 @@ for game in config['games']:
 
   # Future - show comparison results
   anyModified = False
+  
+  # The gameId of unplayed games
+  unplayedGames = []
 
   # Show components if more than 1
   comments.append("")
@@ -71,18 +74,27 @@ for game in config['games']:
     if comp['numPlayers'] == 1:
       playersLabel = "player"
 
-    # Have I modified the play count, mark it if so
-    modified = comp['countedPlays'] != comp['totalPlays']
-    anyModified = anyModified | modified
-    modifiedLabel = ""
-    if modified:
-      modifiedLabel = "*"
+    if comp['countedPlays'] > 0:
+      # Have I modified the play count, mark it if so
+      modified = comp['countedPlays'] != comp['totalPlays']
+      anyModified = anyModified | modified
+      modifiedLabel = ""
+      if modified:
+        modifiedLabel = "*"
 
-    viewUrl = "http://www.boardgamegeek.com/plays/thing/{}?date={}".format(comp['gameid'],playdate.strftime("%Y-%m"))
-    allUrl = "http://boardgamegeek.com/playsummary/thing/{}".format(comp['gameid'])
-    comments.append("  &bull; [thing={}][/thing]: {}{} [url={}]{}[/url] by {} {}    ([url={}]all plays[/url])".format( 
+      viewUrl = "http://www.boardgamegeek.com/plays/thing/{}?date={}".format(comp['gameid'],playdate.strftime("%Y-%m"))
+      allUrl = "http://boardgamegeek.com/playsummary/thing/{}".format(comp['gameid'])
+      comments.append("  &bull; [thing={}][/thing]: {}{} [url={}]{}[/url] by {} {}    ([url={}]all plays[/url])".format( 
                     comp['gameid'], comp['countedPlays'], modifiedLabel, viewUrl, playLabel, comp['numPlayers'], playersLabel, allUrl))
-	  
+    else:
+      unplayedGames.append(comp['gameid'])
+
+  # List all of the games that weren't played in a single line
+  if len(unplayedGames) > 0:
+    comments.append("")
+    # Convert gameId into the thing string, then join them all by ", " and then replace the last join with the word "and" (if it exists)
+    comments.append( "Unplayed game sources " + "] and [".join( ", ".join(map(lambda gameid: "[thing={}][/thing]".format(gameid,), unplayedGames)).rsplit('], [',1)))
+  
   # Mark modified entries with a summary of what happened
   if anyModified:
     comments.append("")
@@ -132,7 +144,9 @@ for game in config['games']:
 
   print("POSTing results for {}".format(game['rootname']))
 
-  res = session.post(url, data=query, cookies=cookie)
+  #res = session.post(url, data=query, cookies=cookie)
   # Note you get a 200 response for success or failure; this includes if your cookie has changed  
-  #print(query)
+ 
+  print(query)
+  print(cookie) 
   #print (res)
