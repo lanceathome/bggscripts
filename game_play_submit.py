@@ -144,9 +144,8 @@ for game in config['games']:
 
   print("POSTing results for {}".format(game['rootname']))
 
-  #res = session.post(url, data=query, cookies=cookie)
+  res = session.post(url, data=query, cookies=cookie)
   # Note you get a 200 response for success or failure; this includes if your cookie has changed  
- 
-  print(query)
-  print(cookie) 
+  #print(query)
+  #print(cookie) 
   #print (res)
