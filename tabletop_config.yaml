@@ -12,7 +12,7 @@ expansions: {
                5686: [129285], # StarGrunt II and I
                4510: [30684], # Johnny Reb III and older version
                4192: [268266, 268248, 268185, 268183, 268159, 268098, 130552, 27658, 74408], # Warhammer and all versions, exc 9th Age
-              11168: [40411, 128345, 130997, 149138, 38784, 306431], # Flames of War
+              11168: [40411, 128345, 130997, 149138, 38784, 306431, 284073], # Flames of War
               21133: [163399, 203312, 326767, 312724, 346659], # Infinity
               26855: [33413, 109001], # Star Army 5150
                1540: [31759, 142526, 283768, 296694, 333174, 284658, 231924, 31760], # Battletech
@@ -20,7 +20,7 @@ expansions: {
                5835: [6700, 6699, 27480], # Command Decision
                4741: [67254, 28681, 17277, 17278, 199076, 19679, 298773, 294592, 74771, 209809, 174048], # Warmachine & Hordes
              101865: [142207, 138211, 138210, 164059, 248375, 251853, 251852, 280771, 351852], #SAGA
-             103885: [183562, 252328], # X-Wing
+             103885: [183562, 252328, 288365], # X-Wing
              184709: [174037, 129378], #Firestorm: Planetfall
                4001: [4091, 6516, 4426, 5316, 33545], # Epic 40K 3rd and down
               10431: [33543], # Epic 40K 4th ed
@@ -74,7 +74,7 @@ expansions: {
                3109: [122821, 33259], # Starmada
               41837: [113825], # Force on Force
              233571: [283474], # Star Wars: Legion
-              37352: [281151, 265477], # Fistful of Lead
+              37352: [281151, 265477, 281121], # Fistful of Lead
               15827: [224832, 279418, 303507], # Blitzkrieg Commander
              297160: [297165], # From Gilgamesh to Grant
               83755: [106523], # Tomorrow's War
@@ -96,7 +96,7 @@ expansions: {
               35187: [305265], # Panzer Korps
              352401: [352408], # The Red Book of the Elf King
              276925: [322523, 351652, 286861], #Warcry
-             267404: [320680], #  Warlords of Erehwon
+             267404: [320680, 320681], #  Warlords of Erehwon
              320021: [320817], # Armada Mantic
              193725: [321476, 298480], # Blood and Plunder
              129031: [222732], # Relic Knights
@@ -116,6 +116,9 @@ expansions: {
              319902: [342974], # Don't look back
              296710: [311397], # Judge Dredd
               29026: [259369], # OGRE miniatures
+               2795: [13354, 3183, 291828], # Car Wars 
+              16435: [26305], # General Quarters
+              25972: [323061, 304509], # Victory at Sea
              
               15985: [712, 2288, 3071, 1676, 10223, 212445, 318472], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333, 350793], # Deadzone 
