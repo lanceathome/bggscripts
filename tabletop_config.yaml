@@ -73,7 +73,7 @@ expansions: {
              101644: [170201, 280633, 280634], # Bushido
                3109: [122821, 33259], # Starmada
               41837: [113825], # Force on Force
-             233571: [283474], # Star Wars: Legion
+             233571: [283474, 361686], # Star Wars: Legion
               37352: [281151, 265477, 281121], # Fistful of Lead
               15827: [224832, 279418, 303507], # Blitzkrieg Commander
              297160: [297165], # From Gilgamesh to Grant
@@ -119,6 +119,9 @@ expansions: {
                2795: [13354, 3183, 291828], # Car Wars 
               16435: [26305], # General Quarters
               25972: [323061, 304509], # Victory at Sea
+             257357: [359758], # Five Leagues from the Borderlands
+              19145: [225054], # Disposable Heroes
+             219807: [282713], # Test of Honour
              
               15985: [712, 2288, 3071, 1676, 10223, 212445, 318472], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333, 350793], # Deadzone 
@@ -131,7 +134,7 @@ expansions: {
               11170: [27976, 54361], # Heroscape
                3439: [198142], #Heroclix
               32674: [248641, 257168, 257169], # Monsterpocalypse,
-             224597: [261594, 287754, 326624, 350072, 337397], # Warhammer Underworlds Shadespire
+             224597: [261594, 287754, 326624, 350072, 337397, 362477], # Warhammer Underworlds Shadespire
              287899: [314837, 350758], # Aeronautica Imperialis
              247104: [320698], # Blitz bowl
              186751: [331398], # Mythic battles
