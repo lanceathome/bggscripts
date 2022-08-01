@@ -47,7 +47,7 @@ expansions: {
               20587: [56641, 178496, 108691, 241384], # Nuts!
               12585: [28451, 119608], # Baptism of Fire
              159160: [128154, 138515, 165570], # Battlegroup (Kursk)
-               3072: [110346, 234521, 281782, 293671], # Necromunda
+               3072: [110346, 234521, 281782, 293671, 362959], # Necromunda
              131024: [227314], # Kensei
               35684: [186961], # Pulp City
                9296: [4978, 13553,138670, 213926], # Warzone
@@ -119,11 +119,12 @@ expansions: {
                2795: [13354, 3183, 291828], # Car Wars 
               16435: [26305], # General Quarters
               25972: [323061, 304509], # Victory at Sea
-             257357: [359758], # Five Leagues from the Borderlands
+             257357: [338070, 359758], # Five Leagues from the Borderlands
               19145: [225054], # Disposable Heroes
              219807: [282713], # Test of Honour
              244121: [324536], # Kings of War Vanguard
              282699: [338545, 311853], # SPQR
+             203270: [283076, 330704], # Gorechosen
              
               15985: [712, 2288, 3071, 1676, 10223, 212445, 318472], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333, 350793], # Deadzone 
