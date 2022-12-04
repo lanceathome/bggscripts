@@ -47,7 +47,7 @@ expansions: {
               20587: [56641, 178496, 108691, 241384], # Nuts!
               12585: [28451, 119608], # Baptism of Fire
              159160: [128154, 138515, 165570], # Battlegroup (Kursk)
-               3072: [110346, 234521, 281782, 293671, 362959], # Necromunda
+               3072: [110346, 234521, 281782, 293671, 362959, 363009], # Necromunda
              131024: [227314], # Kensei
               35684: [186961], # Pulp City
                9296: [4978, 13553,138670, 213926], # Warzone
@@ -56,7 +56,7 @@ expansions: {
               12034: [21052], # Tactica
              220248: [191312, 264685], # Grimdark Future
              220249: [264748], # Age of Fantasy
-             137958: [236934, 174116, 236938, 357463], # Wild West Exodus
+             137958: [236934, 174116, 236938, 357463, 174116], # Wild West Exodus
              177354: [232166, 317519], # Frostgrave
              103670: [216066], # Dust Warfare
               13936: [122751, 172696, 229988], # Dark Age
@@ -76,6 +76,7 @@ expansions: {
               41837: [113825], # Force on Force
              233571: [283474, 361686], # Star Wars: Legion
               37352: [281151, 265477, 281121], # Fistful of Lead
+              31949: [95662], # Fistful of TOWs
               15827: [224832, 279418, 303507], # Blitzkrieg Commander
              297160: [297165], # From Gilgamesh to Grant
               83755: [106523], # Tomorrow's War
@@ -128,6 +129,11 @@ expansions: {
              203270: [283076, 330704], # Gorechosen
              195450: [340691], # Navios de Linea Trafalgar 1805
               10310: [305165], # Warfare in the Age of Reason
+              16030: [38565], # Volley and Bayonet
+              10266: [11388], # Armati
+             185845: [288809], # Dropfleet Commander / Battle for Earth 
+              13455: [30795], # Babylon 5 Call to Arms             
+              63951: [353728], # LaSalle
              
               15985: [712, 2288, 3071, 1676, 10223, 212445, 318472], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333, 350793], # Deadzone 
@@ -148,5 +154,7 @@ expansions: {
              285902: [313893], # Riot Quest
              240271: [324657], # Core Space
              158876: [241658], # British vs Pirates             
+               3895: [27266, 27265], # Silent Death
+             250664: [302268, 302269], # Godtear
    }
 }
