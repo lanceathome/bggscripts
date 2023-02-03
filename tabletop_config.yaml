@@ -33,7 +33,7 @@ expansions: {
              194812: [194810, 194813], # Marvel Universe Miniature Game,
                7950: [8049], # Chronopia
              203502: [203503, 203504], # Stormcloud Attack
-             180241: [204397, 227725, 256422, 341080], # Age of Sigmar
+             180241: [204397, 227725, 256422, 341080, 357856], # Age of Sigmar
              189123: [203671], # Relicblade
              123223: [204797], # Pike & Shotte
               60815: [204594], # Black Powder
@@ -62,9 +62,9 @@ expansions: {
               13936: [122751, 172696, 229988], # Dark Age
              137141: [237181, 300420], # Batman
               12129: [12128, 64778], # Giant Monster Rampage 
-             207653: [154307, 256066, 344697], # Kill Team
+             207653: [154307, 256066, 344697, 370671, 374002], # Kill Team
              195242: [256962, 304620], # Tanks
-              28805: [259435, 260234], # Lord of the Rings
+              28805: [259435, 260234, 375439], # Lord of the Rings
              207653: [256066, 154307, 344697, 262067], # Kill Team
              139771: [240143, 275972], # Star Trek Attack Wing
              190700: [254052, 305837], # Team Yankee
@@ -103,7 +103,7 @@ expansions: {
              193725: [321476, 298480], # Blood and Plunder
              129031: [222732], # Relic Knights
              137958: [236934, 236938, 357463], # wild-west-exodus
-             223376: [265039, 273482, 293387, 294756, 339062], # song-ice-fire-tabletop-miniatures-game-stark-vs-la
+             223376: [265039, 273482, 293387, 294756, 339062, 361509, 361507], # song-ice-fire-tabletop-miniatures-game-stark-vs-la
              259134: [338745], # adeptus-titanicus-horus-heresy-rules-set
              264476: [295604], # rangers-shadow-deep
              288317: [296321, 296529, 296528, 296525, 296530], # black-seas
@@ -134,6 +134,8 @@ expansions: {
              185845: [288809], # Dropfleet Commander / Battle for Earth 
               13455: [30795], # Babylon 5 Call to Arms             
               63951: [353728], # LaSalle
+             319902: [342974], # Don't look back
+             317164: [374689], # Never Mind the Billhooks
              
               15985: [712, 2288, 3071, 1676, 10223, 212445, 318472], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333, 350793], # Deadzone 
