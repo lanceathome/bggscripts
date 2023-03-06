@@ -33,13 +33,19 @@ ignorePlayDate = ignorePlayDate+relativedelta(months=-1)
 ignorePlayMonth = date(ignorePlayDate.year, ignorePlayDate.month, 1).strftime("%Y-%m")
 print ("Dont show plays in {}".format(ignorePlayMonth))
 
-
-
-url = 'https://boardgamegeek.com/geeklist/item/save'
 session = requests.Session()
+
+pageUrl = 'https://boardgamegeek.com/geeklist/{}'.format(listid)
+url = 'https://boardgamegeek.com/geeklist/item/save'
+res = session.get(url, cookies=cookie)
+sessionId = session.cookies.get_dict()['SessionID']
+
+gameIndex = 0
 
 # Iterate over each game, submitting an entry (as at this point each game has a play)
 for game in config['games']:
+  
+  gameIndex = gameIndex + 1
   
   # Build the comments
   comments = []
@@ -84,7 +90,7 @@ for game in config['games']:
 
       viewUrl = "http://www.boardgamegeek.com/plays/thing/{}?date={}".format(comp['gameid'],playdate.strftime("%Y-%m"))
       allUrl = "http://boardgamegeek.com/playsummary/thing/{}".format(comp['gameid'])
-      comments.append("  &bull; [thing={}][/thing]: {}{} [url={}]{}[/url] by {} {}    ([url={}]all plays[/url])".format( 
+      comments.append("  • [thing={}][/thing]: {}{} [url={}]{}[/url] by {} {}    ([url={}]all plays[/url])".format( 
                     comp['gameid'], comp['countedPlays'], modifiedLabel, viewUrl, playLabel, comp['numPlayers'], playersLabel, allUrl))
     else:
       unplayedGames.append(comp['gameid'])
@@ -139,13 +145,23 @@ for game in config['games']:
 
 #    comments.append(line)
 
-  query = {'itemid': 0, 'listid':listid, 'action':'save','objecttype':'thing',
-           'objectid':game['highestPlayed'], 'comments':"\n".join(comments)}
+  queryData = {
+    "item": {
+      "type": "things",
+      "id": game['highestPlayed']
+    },
+    "imageid": None,
+    "imageOverridden": False,
+    "index": gameIndex,
+    "body": "\n".join(comments),
+    "rollsEnabled": False
+  }
+  
+  query = json.dumps(queryData)
 
+  url = "https://api.geekdo.com/api/geeklists/{}/listitems".format(listid)
+  headers = {'authorization': 'GeekAuth ' + sessionId}
+  
   print("POSTing results for {}".format(game['rootname']))
 
-  res = session.post(url, data=query, cookies=cookie)
-  # Note you get a 200 response for success or failure; this includes if your cookie has changed  
-  #print(query)
-  #print(cookie) 
-  #print (res)
+  res = session.post(url, data=query, cookies=cookie, headers=headers)

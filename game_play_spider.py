@@ -26,6 +26,16 @@ listid = int(sys.argv[2])
 playdate = date.fromisoformat( config['playDate'] + "-01" )
 
 
+session = requests.Session()
+
+url = 'https://boardgamegeek.com/geeklist/item/save'
+res = session.get(url, cookies=cookie)
+sessionId = session.cookies.get_dict()['SessionID']
+headers = {'authorization': 'GeekAuth ' + sessionId}
+  
+print (sessionId)
+
+
 # Keep trying to get the XML until it returns
 # url - The URL to fetch the XML document from
 def fetch_xml(url): 
@@ -61,8 +71,6 @@ def fetch_xml(url):
 url = "https://www.boardgamegeek.com/xmlapi/geeklist/{}".format(listid)
 xml = fetch_xml(url)
 
-session = requests.Session()
-
 # Get the items so we can fill in the spider links
 listitems = []
 listKeys = {}
@@ -94,7 +102,7 @@ gameToList = {}
 for idx,game in enumerate(gamelist):
   gameToList[game['rootid']] = ( game['rootname'], listitems[idx]['listid'], listitems[idx]['objectid'] )
 
-for idx,game in enumerate(gamelist):
+for gidx,game in enumerate(gamelist):
 
   itemid = gameToList[game['rootid']][1]
   item = listKeys[itemid]
@@ -150,16 +158,41 @@ for idx,game in enumerate(gamelist):
 
     comments.append(", ".join(line))    
 
-    query = {'itemid': itemid, 'listid':listid, 'action':'save','objecttype':'thing',
-           'objectid': game['highestPlayed'], 'comments': item['comment']+"\n"+"\n".join(comments)}
+    ##query = {'itemid': itemid, 'listid':listid, 'action':'save','objecttype':'thing',
+    #       'objectid': game['highestPlayed'], 'comments': item['comment']+"\n"+"\n".join(comments)}
 
-    url = 'https://boardgamegeek.com/geeklist/item/save'
+    #url = 'https://boardgamegeek.com/geeklist/item/save'
     print("POSTing results for {}".format(game['rootname']))
-    res = session.post(url, data=query, cookies=cookie)
+    #res = session.post(url, data=query, cookies=cookie)
     #print(query)
+    
+    queryData = {
+      "item": {
+        "type": "things",
+        "id": game['highestPlayed']
+      },
+      "imageid": None,
+      "imageOverridden": False,
+      "index": gidx+1,
+      "body": item['comment']+"\n".join(comments),
+      "rollsEnabled": False
+    }
+    
+    query = json.dumps(queryData)
+    url = "https://api.geekdo.com/api/listitems/{}".format(item["listid"])
+    res = session.patch(url,data=query,cookies=cookie,headers=headers)
+    
+    #print(url)
+    #print(query)
+    #print(res)
+    
+    #if gidx > 2:
+    #  break
+    
 
 commentAdd = []
 
+# Write the summary information to the screen for the user
 
 if len(firstGames) > 0:
   firstPlays = "First recorded play for "
