@@ -114,7 +114,8 @@ for game in config['games']:
   elif game['mostRecentlyPlayed'][:7] != ignorePlayMonth:
     lastPlayedDate = date.fromisoformat(game['mostRecentlyPlayed'])
     comments.append("Last played in {}".format(lastPlayedDate.strftime("%B, %Y")))
-
+  comments.append("")
+  
   # If there are any game spider results shown them now
 #  linkages = []
 #  if len(game['crossplays']) > 0:
