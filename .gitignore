@@ -1,3 +1,4 @@
 /goldenTurtle.db
 /*.txt
 config.json
+__pycache__/

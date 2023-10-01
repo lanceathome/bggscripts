@@ -12,6 +12,13 @@ A SQLite database is used to store the results from each competition.
 
 ## Setup
 
+The requests library is needed
+
+```bash
+python -m pip install requests
+python -m pip install Mako
+```
+
 Run the store_turle_result.py script to create the default database goldenTurtle.db. The scripts are designed to run 
 from the command line (either bash on Linux, or cmd or PowerShell on Windows).
 

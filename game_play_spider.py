@@ -25,16 +25,12 @@ listid = int(sys.argv[2])
 
 playdate = date.fromisoformat( config['playDate'] + "-01" )
 
-
 session = requests.Session()
 
 url = 'https://boardgamegeek.com/geeklist/item/save'
 res = session.get(url, cookies=cookie)
 sessionId = session.cookies.get_dict()['SessionID']
 headers = {'authorization': 'GeekAuth ' + sessionId}
-  
-print (sessionId)
-
 
 # Keep trying to get the XML until it returns
 # url - The URL to fetch the XML document from
@@ -158,13 +154,7 @@ for gidx,game in enumerate(gamelist):
 
     comments.append(", ".join(line))    
 
-    ##query = {'itemid': itemid, 'listid':listid, 'action':'save','objecttype':'thing',
-    #       'objectid': game['highestPlayed'], 'comments': item['comment']+"\n"+"\n".join(comments)}
-
-    #url = 'https://boardgamegeek.com/geeklist/item/save'
     print("POSTing results for {}".format(game['rootname']))
-    #res = session.post(url, data=query, cookies=cookie)
-    #print(query)
     
     queryData = {
       "item": {
@@ -181,14 +171,6 @@ for gidx,game in enumerate(gamelist):
     query = json.dumps(queryData)
     url = "https://api.geekdo.com/api/listitems/{}".format(item["listid"])
     res = session.patch(url,data=query,cookies=cookie,headers=headers)
-    
-    #print(url)
-    #print(query)
-    #print(res)
-    
-    #if gidx > 2:
-    #  break
-    
 
 commentAdd = []
 

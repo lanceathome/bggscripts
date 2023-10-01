@@ -81,7 +81,7 @@ expansions: {
              297160: [297165], # From Gilgamesh to Grant
               83755: [106523], # Tomorrow's War
              236370: [310947, 347888], # Blood Red Skies
-             134524: [301712], # Lion Rampant
+             134524: [301712, 369011], # Lion Rampant
              308356: [312183], # Knyghte, Pyke & Sworde: Medieval Mass Skirmish
                5504: [40679, 299911], # Napoleons Battles
               40544: [306898], # Beneath the Lily Banners
@@ -103,11 +103,11 @@ expansions: {
              193725: [321476, 298480], # Blood and Plunder
              129031: [222732], # Relic Knights
              137958: [236934, 236938, 357463], # wild-west-exodus
-             223376: [265039, 273482, 293387, 294756, 339062, 361509, 361507], # song-ice-fire-tabletop-miniatures-game-stark-vs-la
+             223376: [265039, 273482, 293387, 294756, 339062, 361509, 361507, 374176], # song-ice-fire-tabletop-miniatures-game-stark-vs-la
              259134: [338745], # adeptus-titanicus-horus-heresy-rules-set
              264476: [295604], # rangers-shadow-deep
              288317: [296321, 296529, 296528, 296525, 296530], # black-seas
-             284261: [316707, 386081], # conquest-last-argument-kings
+             284261: [316707, 386081, 380345], # conquest-last-argument-kings
              303317: [322539], # warcaster-neo-mechanika
              114504: [346138], # carnevale-vicious-fighting-along-canals-venice
               70222: [353488, 282596, 263171], # 7tv
@@ -141,6 +141,7 @@ expansions: {
              330584: [381996], # Eldfall Chronicles
              276756: [392044, 392045], # mad-dogs-and-englishmen-india
              304569: [319822], # taiping-era-tabletop-wargame-rules-land-conflict-1
+              21780: [297883], # richmond-american-civil-war-miniature-rules
              
               15985: [712, 2288, 3071, 1676, 10223, 212445, 318472], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333, 350793], # Deadzone 
@@ -153,7 +154,7 @@ expansions: {
               11170: [27976, 54361], # Heroscape
                3439: [198142, 327482, 352211], #Heroclix
               32674: [248641, 257168, 257169], # Monsterpocalypse,
-             224597: [261594, 287754, 326624, 350072, 337397, 362477, 373084], # Warhammer Underworlds Shadespire
+             224597: [261594, 287754, 326624, 350072, 337397, 362477, 373084, 387535], # Warhammer Underworlds Shadespire
              287899: [314837, 350758], # Aeronautica Imperialis
              247104: [320698], # Blitz bowl
              186751: [331398], # Mythic battles
