@@ -99,7 +99,7 @@ expansions: {
              352401: [352408], # The Red Book of the Elf King
              276925: [322523, 351652, 286861, 369146], #Warcry
              267404: [320680, 320681], #  Warlords of Erehwon
-             320021: [320817], # Armada Mantic
+             320021: [320817, 345394], # Armada Mantic
              193725: [321476, 298480], # Blood and Plunder
              129031: [222732], # Relic Knights
              137958: [236934, 236938, 357463], # wild-west-exodus
@@ -114,7 +114,7 @@ expansions: {
              126021: [174046, 288809], # dropzone-commander
               26129: [39786, 175696, 339250, 339249], # heavy-gear-blitz
                3864: [176560], # mechwarrior-dark-age
-              85652: [174045, 196135, 334606], # dystopian-wars
+              85652: [174045, 196135, 334606, 404884], # dystopian-wars
              319902: [342974], # Don't look back
              296710: [311397], # Judge Dredd
               29026: [259369], # OGRE miniatures
@@ -143,6 +143,7 @@ expansions: {
              304569: [319822], # taiping-era-tabletop-wargame-rules-land-conflict-1
               21780: [297883], # richmond-american-civil-war-miniature-rules
              401394: [401508, 401511], # blood-ancients
+             235088: [386313], # tribal
              
               15985: [712, 2288, 3071, 1676, 10223, 212445, 318472], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333, 350793], # Deadzone 
