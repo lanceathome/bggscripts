@@ -11,18 +11,18 @@ expansions: {
              107148: [131183, 121042, 125679, 42306, 39333, 36482, 216710], # Wings of Glory WWII
                5686: [129285], # StarGrunt II and I
                4510: [30684], # Johnny Reb III and older version
-               4192: [268266, 268248, 268185, 268183, 268159, 268098, 130552, 27658, 74408], # Warhammer and all versions, exc 9th Age
+               4192: [268266, 268248, 268185, 268183, 268159, 268098, 130552, 27658, 74408, 411400], # Warhammer and all versions, exc 9th Age
               11168: [40411, 128345, 130997, 149138, 38784, 306431, 284073], # Flames of War
-              21133: [163399, 203312, 326767, 312724, 346659], # Infinity
+              21133: [163399, 203312, 262158, 326767, 312724, 346659, 363995, 369435], # Infinity
               26855: [33413, 109001], # Star Army 5150
-               1540: [31759, 142526, 283768, 296694, 333174, 284658, 231924, 31760], # Battletech
+               1540: [31759, 142526, 283768, 296694, 333174, 284658, 231924, 31760, 361918, 387647], # Battletech
               29522: [10697, 41604, 183033], # Chain Reaction 2
                5835: [6700, 6699, 27480], # Command Decision
                4741: [67254, 28681, 17277, 17278, 199076, 19679, 298773, 294592, 74771, 209809, 174048, 367844], # Warmachine & Hordes
              101865: [142207, 138211, 138210, 164059, 248375, 251853, 251852, 280771, 351852], #SAGA
              103885: [183562, 252328, 288365], # X-Wing
              184709: [174037, 129378], #Firestorm: Planetfall
-               4001: [4091, 6516, 4426, 5316, 33545], # Epic 40K 3rd and down
+               4001: [4091, 6516, 4426, 5316, 33545, 408598], # Epic 40K 3rd and down
               10431: [33543], # Epic 40K 4th ed
              146451: [191206], # Wrath of Kings
              127493: [164848, 205877, 140235, 238805, 313829], # Bolt Action
@@ -97,20 +97,20 @@ expansions: {
              253048: [310781], # legends-signum-battle-vallor
               35187: [305265], # Panzer Korps
              352401: [352408], # The Red Book of the Elf King
-             276925: [322523, 351652, 286861, 369146], #Warcry
+             276925: [322523, 351652, 286861, 369146, 398753, 376606], #Warcry
              267404: [320680, 320681], #  Warlords of Erehwon
              320021: [320817, 345394], # Armada Mantic
              193725: [321476, 298480], # Blood and Plunder
              129031: [222732], # Relic Knights
              137958: [236934, 236938, 357463], # wild-west-exodus
-             223376: [265039, 273482, 293387, 294756, 339062, 361509, 361507, 374176], # song-ice-fire-tabletop-miniatures-game-stark-vs-la
+             223376: [265039, 273482, 293387, 294756, 339062, 361509, 361507, 374176, 402922], # song-ice-fire-tabletop-miniatures-game-stark-vs-la
              259134: [338745], # adeptus-titanicus-horus-heresy-rules-set
              264476: [295604], # rangers-shadow-deep
              288317: [296321, 296529, 296528, 296525, 296530], # black-seas
              284261: [316707, 386081, 380345], # conquest-last-argument-kings
              303317: [322539], # warcaster-neo-mechanika
              114504: [346138], # carnevale-vicious-fighting-along-canals-venice
-              70222: [353488, 282596, 263171], # 7tv
+              70222: [353488, 282596, 263171, 390350], # 7tv
              126021: [174046, 288809], # dropzone-commander
               26129: [39786, 175696, 339250, 339249], # heavy-gear-blitz
                3864: [176560], # mechwarrior-dark-age
@@ -118,7 +118,7 @@ expansions: {
              319902: [342974], # Don't look back
              296710: [311397], # Judge Dredd
               29026: [259369], # OGRE miniatures
-               2795: [13354, 3183, 291828], # Car Wars 
+               2795: [13354, 3183, 291828, 370499], # Car Wars 
               16435: [26305], # General Quarters
               25972: [323061, 304509], # Victory at Sea
              257357: [338070, 359758], # Five Leagues from the Borderlands
@@ -144,6 +144,9 @@ expansions: {
               21780: [297883], # richmond-american-civil-war-miniature-rules
              401394: [401508, 401511], # blood-ancients
              235088: [386313], # tribal
+             285905: [400080], # marvel-crisis-protocol
+             163745: [322750, 322751], # star-wars-armada
+             374455: [375333], # zone-wars
              
               15985: [712, 2288, 3071, 1676, 10223, 212445, 318472], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333, 350793], # Deadzone 
@@ -156,7 +159,7 @@ expansions: {
               11170: [27976, 54361], # Heroscape
                3439: [198142, 327482, 352211], #Heroclix
               32674: [248641, 257168, 257169], # Monsterpocalypse,
-             224597: [261594, 287754, 326624, 350072, 337397, 362477, 373084, 387535], # Warhammer Underworlds Shadespire
+             224597: [261594, 287754, 326624, 350072, 337397, 362477, 373084, 387535, 396015, 403634], # Warhammer Underworlds Shadespire
              287899: [314837, 350758], # Aeronautica Imperialis
              247104: [320698, 359065], # Blitz bowl
              186751: [331398], # Mythic battles
