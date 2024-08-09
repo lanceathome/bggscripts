@@ -12,7 +12,7 @@ expansions: {
                5686: [129285], # StarGrunt II and I
                4510: [30684], # Johnny Reb III and older version
                4192: [268266, 268248, 268185, 268183, 268159, 268098, 130552, 27658, 74408, 411400], # Warhammer and all versions, exc 9th Age
-              11168: [40411, 128345, 130997, 149138, 38784, 306431, 284073], # Flames of War
+              11168: [40411, 128345, 130997, 149138, 38784, 306431, 284073, 260328], # Flames of War
               21133: [163399, 203312, 262158, 326767, 312724, 346659, 363995, 369435], # Infinity
               26855: [33413, 109001], # Star Army 5150
                1540: [31759, 142526, 283768, 296694, 333174, 284658, 231924, 31760, 361918, 387647], # Battletech
@@ -150,7 +150,10 @@ expansions: {
              365430: [365650], # warhammer-horus-heresy-age-darkness
               72050: [416771], # freebooters-fate
              297999: [416748], #general-darmee-wargame-rules-for-battles-in-the-ag
-             
+             278401: [421558], #clash-of-spears-rules-for-skirmish-battles-in-anci
+             223619: [362963], # shadow-war-armageddon
+              12715: [327071], # de-bellis-renationis
+
               15985: [712, 2288, 3071, 1676, 10223, 212445, 318472], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333, 350793], # Deadzone 
              129731: [144144, 145141, 146014, 149178, 155411, 224141], # Dreadball
@@ -162,15 +165,17 @@ expansions: {
               11170: [27976, 54361], # Heroscape
                3439: [198142, 327482, 352211], #Heroclix
               32674: [248641, 257168, 257169], # Monsterpocalypse,
-             224597: [261594, 287754, 326624, 350072, 337397, 362477, 373084, 387535, 396015, 403634], # Warhammer Underworlds Shadespire
+             224597: [261594, 287754, 326624, 350072, 337397, 362477, 373084, 387535, 396015, 403634, 420041], # Warhammer Underworlds Shadespire
              287899: [314837, 350758], # Aeronautica Imperialis
              247104: [320698, 359065], # Blitz bowl
-             186751: [331398], # Mythic battles
+             186751: [331398, 415112], # Mythic battles
              244654: [295284, 264820, 279492, 254381, 246783], # Wildlands
              285902: [313893], # Riot Quest
              240271: [324657], # Core Space
              158876: [241658], # British vs Pirates             
                3895: [27266, 27265], # Silent Death
              250664: [302268, 302269], # Godtear
+               7929: [37184], # dungeons-and-dragons-miniatures
+             368845: [63027], #leviathans-the-great-war
    }
 }
