@@ -5,7 +5,7 @@ outfile: "tabletop-{}.yaml",
 expansions: { 
              203800: [161126, 36367], # Dust Tactics/Battlefield/1947
               52328: [147537, 281657, 97332, 247069, 187676], # Malifaux 1.5/2/3
-               2162: [11106, 316655, 229427, 160044, 126613, 37165, 13362, 203122, 33048, 145847, 314243, 231036, 314252, 317716, 317866, 317865, 386136], # Warhammer 40K
+               2162: [11106, 316655, 229427, 160044, 126613, 37165, 13362, 203122, 33048, 145847, 314243, 231036, 314252, 317716, 317866, 317865, 386136, 395372, 395373, 395374 ], # Warhammer 40K
               10431: [5316], # Epic Armageddon with Epic 40K
              119866: [31552, 121016, 129165, 108842, 22510, 39596, 9203], # Wings of Glory and Wings of War WWI
              107148: [131183, 121042, 125679, 42306, 39333, 36482, 216710], # Wings of Glory WWII
@@ -13,19 +13,19 @@ expansions: {
                4510: [30684], # Johnny Reb III and older version
                4192: [268266, 268248, 268185, 268183, 268159, 268098, 130552, 27658, 74408, 411400], # Warhammer and all versions, exc 9th Age
               11168: [40411, 128345, 130997, 149138, 38784, 306431, 284073, 260328], # Flames of War
-              21133: [163399, 203312, 262158, 326767, 312724, 346659, 363995, 369435], # Infinity
+              21133: [163399, 203312, 262158, 326767, 312724, 346659, 363995, 369435, 431042], # Infinity
               26855: [33413, 109001], # Star Army 5150
                1540: [31759, 142526, 283768, 296694, 333174, 284658, 231924, 31760, 361918, 387647], # Battletech
               29522: [10697, 41604, 183033], # Chain Reaction 2
                5835: [6700, 6699, 27480], # Command Decision
                4741: [67254, 28681, 17277, 17278, 199076, 19679, 298773, 294592, 74771, 209809, 174048, 367844], # Warmachine & Hordes
-             101865: [142207, 138211, 138210, 164059, 248375, 251853, 251852, 280771, 351852, 365310], #SAGA
+             101865: [142207, 138211, 138210, 164059, 248375, 251853, 251852, 280771, 351852, 365310, 432402, 221373, 376752], #SAGA
              103885: [183562, 252328, 288365], # X-Wing
              184709: [174037, 129378], #Firestorm: Planetfall
                4001: [4091, 6516, 4426, 5316, 33545, 408598], # Epic 40K 3rd and down
               10431: [33543], # Epic 40K 4th ed
              146451: [191206], # Wrath of Kings
-             127493: [164848, 205877, 140235, 238805, 313829], # Bolt Action
+             127493: [164848, 205877, 140235, 238805, 313829, 431861], # Bolt Action
               30804: [182544], # Song of Blades and Heroes
               37906: [192392, 192393, 192394], # Firestorm Armada
              135732: [183968, 204136, 215000], # Beyond the Gates of Antares
@@ -33,10 +33,10 @@ expansions: {
              194812: [194810, 194813], # Marvel Universe Miniature Game,
                7950: [8049], # Chronopia
              203502: [203503, 203504], # Stormcloud Attack
-             180241: [204397, 227725, 256422, 341080, 357856], # Age of Sigmar
+             180241: [204397, 227725, 256422, 341080, 357856, 425091], # Age of Sigmar
              189123: [203671], # Relicblade
              123223: [204797], # Pike & Shotte
-              60815: [204594, 401040, 401039], # Black Powder
+              60815: [204594, 401040, 401039, 327249], # Black Powder
               97377: [204793], # Hail Caeser
               43471: [180849], # 1-48 Combat
              155451: [210271], # Guildball
@@ -47,7 +47,7 @@ expansions: {
               20587: [56641, 178496, 108691, 241384], # Nuts!
               12585: [28451, 119608], # Baptism of Fire
              159160: [128154, 138515, 165570], # Battlegroup (Kursk)
-               3072: [110346, 234521, 281782, 293671, 362959, 363009, 401248], # Necromunda
+               3072: [110346, 234521, 281782, 293671, 362959, 363009, 401248, 426095], # Necromunda
              131024: [227314], # Kensei
               35684: [186961], # Pulp City
                9296: [4978, 13553,138670, 213926], # Warzone
@@ -57,21 +57,21 @@ expansions: {
              220248: [191312, 264685], # Grimdark Future
              220249: [264748, 192139], # Age of Fantasy
              137958: [236934, 174116, 236938, 357463, 174116], # Wild West Exodus
-             177354: [232166, 317519], # Frostgrave
+             177354: [232166, 317519, 324277, 192186, 222317, 235098, 287958], # Frostgrave
              103670: [216066], # Dust Warfare
               13936: [122751, 172696, 229988], # Dark Age
              137141: [237181, 300420], # Batman
               12129: [12128, 64778], # Giant Monster Rampage 
-             207653: [154307, 256066, 344697, 262067, 370671, 374002, 359563, 390358], # Kill Team
+             207653: [154307, 256066, 344697, 262067, 370671, 374002, 359563, 390358, 429262, 432676], # Kill Team
              195242: [256962, 304620], # Tanks
-              28805: [259435, 260234, 375439], # Lord of the Rings
+              28805: [259435, 260234, 375439, 134009, 435841], # Lord of the Rings
              139771: [240143, 275972, 376779, 376794], # Star Trek Attack Wing
              190700: [254052, 305837], # Team Yankee
              270680: [270906], # Cruel Seas
              265672: [259015], # Strontium Dog
              184824: [274428], # Gaslands
              101644: [170201, 280633, 280634], # Bushido
-               3109: [122821, 33259, 226873], # Starmada
+               3109: [122821, 33259, 226873, 416309], # Starmada
               41837: [113825], # Force on Force
              233571: [283474, 361686], # Star Wars: Legion
               37352: [281151, 265477, 281121], # Fistful of Lead
@@ -96,17 +96,17 @@ expansions: {
              253048: [310781], # legends-signum-battle-vallor
               35187: [305265], # Panzer Korps
              352401: [352408], # The Red Book of the Elf King
-             276925: [322523, 351652, 286861, 369146, 398753, 376606], #Warcry
+             276925: [322523, 351652, 286861, 369146, 398753, 376606, 410392], #Warcry
              267404: [320680, 320681], #  Warlords of Erehwon
              320021: [320817, 345394], # Armada Mantic
              193725: [321476, 298480], # Blood and Plunder
              129031: [222732], # Relic Knights
              137958: [236934, 236938, 357463], # wild-west-exodus
-             223376: [265039, 273482, 293387, 294756, 339062, 361509, 361507, 374176, 402922], # song-ice-fire-tabletop-miniatures-game-stark-vs-la
+             223376: [265039, 273482, 293387, 294756, 339062, 361509, 361507, 374176, 402922, 434385], # song-ice-fire-tabletop-miniatures-game-stark-vs-la
              259134: [338745], # adeptus-titanicus-horus-heresy-rules-set
              264476: [295604, 307197, 352448, 382037, 276094], # rangers-shadow-deep
              288317: [296321, 296529, 296528, 296525, 296530], # black-seas
-             284261: [316707, 386081, 380345], # conquest-last-argument-kings
+             284261: [316707, 386081, 380345, 365244], # conquest-last-argument-kings
              303317: [322539], # warcaster-neo-mechanika
              114504: [346138], # carnevale-vicious-fighting-along-canals-venice
               70222: [353488, 282596, 263171, 390350], # 7tv
@@ -117,7 +117,7 @@ expansions: {
              319902: [342974], # Don't look back
              296710: [311397], # Judge Dredd
               29026: [259369], # OGRE miniatures
-               2795: [13354, 3183, 291828, 370499], # Car Wars 
+               2795: [13354, 3183, 291828, 370499, 425496], # Car Wars 
               16435: [26305], # General Quarters
               25972: [323061, 304509], # Victory at Sea
              257357: [338070, 359758], # Five Leagues from the Borderlands
@@ -146,28 +146,39 @@ expansions: {
              285905: [400080], # marvel-crisis-protocol
              163745: [322750, 322751], # star-wars-armada
              374455: [375333], # zone-wars
-             322283: [372918, 346984], # stargrave-science-fiction-wargames-ravaged-galaxy
+             322283: [372918, 346984, 363499, 403762], # stargrave-science-fiction-wargames-ravaged-galaxy
              365430: [365650], # warhammer-horus-heresy-age-darkness
               72050: [416771], # freebooters-fate
              297999: [416748], #general-darmee-wargame-rules-for-battles-in-the-ag
              278401: [421558], #clash-of-spears-rules-for-skirmish-battles-in-anci
              223619: [362963], # shadow-war-armageddon
               12715: [327071], # de-bellis-renationis
+             182229: [298490], #skirmish-outbreak
+             264476: [295604, 421340, 276094, 307197, 352448, 382037], # rangers-of-shadow-deep
+             422735: [422979], # warcrow
+             260516: [427265], # warpath-firefight
+             146207: [418845], # dead-mans-hand
+               6540: [299044], # fear-god-and-dread-nought
+             428108: [430022, 436177], # clash-of-steel-operation-unthinkable-american-vs-s
+              25807: [111126], # combat-storm
+             335017: [389111, 423979], # the-silver-bayonet-a-wargame-of-napoleonic-gothic
+             281198: [349231, 349229, 352014, 325865], # the-elder-scrolls-call-to-arms
+             244586: [339361], # sellswords-and-spellslingers
 
               15985: [712, 2288, 3071, 1676, 10223, 212445, 318472], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333, 350793], # Deadzone 
              129731: [144144, 145141, 146014, 149178, 155411, 224141], # Dreadball
-             101929: [113667], # Sergeants Miniatures Game
+             101929: [113667, 136606], # Sergeants Miniatures Game
              124965: [122588, 124969, 124968, 126008], # Dungeon Command Heart of Cormyr
              167698: [183271, 203204], # MtG Planeswalkers
              146439: [25417], # Battlelore
               67492: [71493, 77849, 88926, 93038, 103515, 123847], # Battles of Westeros
-              11170: [27976, 54361], # Heroscape
+              11170: [27976, 54361, 368557], # Heroscape
                3439: [198142, 327482, 352211], #Heroclix
               32674: [248641, 257168, 257169], # Monsterpocalypse,
-             224597: [261594, 287754, 326624, 350072, 337397, 362477, 373084, 387535, 396015, 403634, 420041], # Warhammer Underworlds Shadespire
+             224597: [261594, 287754, 326624, 350072, 337397, 362477, 373084, 387535, 396015, 403634, 420041, 433099], # Warhammer Underworlds Shadespire
              287899: [314837, 350758], # Aeronautica Imperialis
-             247104: [320698, 359065], # Blitz bowl
+             247104: [320698, 359065, 427150], # Blitz bowl
              186751: [331398, 415112], # Mythic battles
              244654: [295284, 264820, 279492, 254381, 246783], # Wildlands
              285902: [313893], # Riot Quest
@@ -177,5 +188,8 @@ expansions: {
              250664: [302268, 302269], # Godtear
                7929: [37184], # dungeons-and-dragons-miniatures
              368845: [63027], #leviathans-the-great-war
+             136000: [368761], # rivet-wars-eastern-front
+             194517: [432235], # super-fantasy-brawl
+             289951: [290626, 294286, 401119], # the-portable-wargame
    }
 }
