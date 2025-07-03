@@ -4,7 +4,7 @@ filter: 6,
 outfile: "tabletop-{}.yaml",
 expansions: { 
              203800: [161126, 36367], # Dust Tactics/Battlefield/1947
-              52328: [147537, 281657, 97332, 247069, 187676], # Malifaux 1.5/2/3
+              52328: [147537, 281657, 97332, 247069, 187676, 444876], # Malifaux 1.5/2/3
                2162: [11106, 316655, 229427, 160044, 126613, 37165, 13362, 203122, 33048, 145847, 314243, 231036, 314252, 317716, 317866, 317865, 386136, 395372, 395373, 395374 ], # Warhammer 40K
               10431: [5316], # Epic Armageddon with Epic 40K
              119866: [31552, 121016, 129165, 108842, 22510, 39596, 9203], # Wings of Glory and Wings of War WWI
@@ -161,9 +161,19 @@ expansions: {
                6540: [299044], # fear-god-and-dread-nought
              428108: [430022, 436177], # clash-of-steel-operation-unthinkable-american-vs-s
               25807: [111126], # combat-storm
-             335017: [389111, 423979], # the-silver-bayonet-a-wargame-of-napoleonic-gothic
+             335017: [389111, 423979, 431730], # the-silver-bayonet-a-wargame-of-napoleonic-gothic
              281198: [349231, 349229, 352014, 325865], # the-elder-scrolls-call-to-arms
              244586: [339361], # sellswords-and-spellslingers
+             336357: [418067], # cyberpunk-red-combat-zone
+             310217: [413676], # battlespace-ultra-modern-solo-skirmish-game
+             375986: [373595], # inx-incountry-rulebook
+              20610: [98452, 338857], # rapid-fire-second-edition-fast-play-world-war-two
+             181807: [443870], # dragon-rampant-fantasy-wargaming-rules
+             310314: [342237], # bloodfields
+              17220: [297881], # pirates-miniature-battles-on-the-high-seas
+              26474: [404338], # cold-war-commander-fast-play-tabletop-wargame-rule
+             243312: [428315], # gangs-of-rome
+             146922: [448715], # chain-of-command
 
               15985: [712, 2288, 3071, 1676, 10223, 212445, 318472], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333, 350793], # Deadzone 
@@ -191,5 +201,6 @@ expansions: {
              136000: [368761], # rivet-wars-eastern-front
              194517: [432235], # super-fantasy-brawl
              289951: [290626, 294286, 401119], # the-portable-wargame
+             246744: [411542], # harry-potter-miniatures-adventure-game
    }
 }

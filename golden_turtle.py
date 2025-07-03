@@ -37,7 +37,7 @@ store_turtle_result.addThumber(c,compresults['month'],compresults['voters'][thum
 encourage = store_turtle_result.getEncourageRecommendation(c,compresults['month'])
 print("    {:<15} #Enter #Enc Votes Image Entry".format("User"))
 for idx, enc in enumerate(encourage):
-   print("#{:<2} {:<15} {:>6} {:>4} {:>5} https://boardgamegeek.com/image/{}/ {}".format(idx,enc[0],enc[1],enc[2],enc[3],enc[4],enc[5])) 
+   print("#{:<2} {:<15} {:>6} {:>4} {:>5} https://boardgamegeek.com/image/{} {}".format(idx,enc[0],enc[1],enc[2],enc[3],enc[4],enc[5])) 
 
 print("Enter selected encouragement places (comma to separate):")
 selection = str(input()).split(',')

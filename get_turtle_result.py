@@ -28,7 +28,7 @@ def getCompetitionXml(compid):
 def getVotesForGame(listitem):
    query = {'itemtype': 'listitem', 'action':'recspy', 'itemid':listitem}
    r = requests.post("https://boardgamegeek.com/geekrecommend.php", data=query)
-   prog = re.compile('>(\w*)</a>')
+   prog = re.compile(r">(\w*)</a>")
 
    voters = set()
    for item in prog.findall(r.text):
@@ -43,7 +43,7 @@ def getCompetitionMonth(compxml):
    return dt
 
 def getCompetitionResults(compxml):
-   prog = re.compile('\[imageid=(\d+)(\D*)\]', re.IGNORECASE)
+   prog = re.compile(r"\[imageid=(\d+)(\D*)\]", re.IGNORECASE)
 
    allvoters = set()
    results = []
