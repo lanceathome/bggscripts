@@ -13,7 +13,7 @@ expansions: {
                4510: [30684], # Johnny Reb III and older version
                4192: [268266, 268248, 268185, 268183, 268159, 268098, 130552, 27658, 74408, 411400], # Warhammer and all versions, exc 9th Age
               11168: [40411, 128345, 130997, 149138, 38784, 306431, 284073, 260328], # Flames of War
-              21133: [163399, 203312, 262158, 326767, 312724, 346659, 363995, 369435, 431042], # Infinity
+              21133: [163399, 203312, 262158, 326767, 312724, 346659, 363995, 369435, 431042, 435958], # Infinity
               26855: [33413, 109001], # Star Army 5150
                1540: [31759, 142526, 283768, 296694, 333174, 284658, 231924, 31760, 361918, 387647], # Battletech
               29522: [10697, 41604, 183033], # Chain Reaction 2
@@ -136,7 +136,6 @@ expansions: {
              319902: [342974], # Don't look back
              317164: [374689], # Never Mind the Billhooks
               67934: [297700], # Tsushima Naval Wargame
-               8495: [327071], # De Bellis Multitudinus DBM
              330584: [381996], # Eldfall Chronicles
              276756: [392044, 392045], # mad-dogs-and-englishmen-india
              304569: [319822], # taiping-era-tabletop-wargame-rules-land-conflict-1
@@ -174,6 +173,12 @@ expansions: {
               26474: [404338], # cold-war-commander-fast-play-tabletop-wargame-rule
              243312: [428315], # gangs-of-rome
              146922: [448715], # chain-of-command
+             397248: [449064], # pillage-skirmish-rules-for-the-dark-age
+             204680: [443869], # burrows-and-badgers-a-skirmish-game-of-anthropomor
+             142219: [407210], # all-quiet-on-the-martian-front
+             361644: [383239], # steel-rift
+              43555: [419035], # this-quars-war
+              25415: [302007], # bulldogs-away-modern-fast-attack-craft-rules-1950
 
               15985: [712, 2288, 3071, 1676, 10223, 212445, 318472], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333, 350793], # Deadzone 
@@ -202,5 +207,6 @@ expansions: {
              194517: [432235], # super-fantasy-brawl
              289951: [290626, 294286, 401119], # the-portable-wargame
              246744: [411542], # harry-potter-miniatures-adventure-game
+             450693: [450695, 450694], # amid-the-chaos-the-choices-are-simple-theyre-just
    }
 }
