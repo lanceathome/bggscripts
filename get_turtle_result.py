@@ -8,21 +8,21 @@ import math
 import time
 import datetime
 
-def getLatestCompetition():
+def getLatestCompetition(bearer_token):
    # Download the Golden Turtle list and find the last entry on it
-   masterxml = fetch_xml('https://www.boardgamegeek.com/xmlapi/geeklist/51364')
+   masterxml = fetch_xml('https://www.boardgamegeek.com/xmlapi/geeklist/51364', bearer_token)
 
    # We want geeklist/item[-1]/@objectid to find the last competition geeklist/51364
    item = masterxml[-1]
    compid = item.attrib['objectid']
    
-   print(compid)
+   # print(compid)
 
    # Now get the competition information
    return getCompetitionXml(compid)
 
-def getCompetitionXml(compid):
-   compxml = fetch_xml('https://www.boardgamegeek.com/xmlapi/geeklist/{}'.format(compid))
+def getCompetitionXml(compid, bearer_token):
+   compxml = fetch_xml('https://www.boardgamegeek.com/xmlapi/geeklist/{}'.format(compid), bearer_token)
    return compxml;
 
 def getVotesForGame(listitem):

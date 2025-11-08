@@ -10,6 +10,7 @@ import math
 from urllib.request import urlopen
 from urllib.error import HTTPError
 import requests
+from fetch_xml import fetch_xml
 
 # pip install requests
    
@@ -31,41 +32,10 @@ url = 'https://boardgamegeek.com/geeklist/item/save'
 res = session.get(url, cookies=cookie)
 sessionId = session.cookies.get_dict()['SessionID']
 headers = {'authorization': 'GeekAuth ' + sessionId}
-
-# Keep trying to get the XML until it returns
-# url - The URL to fetch the XML document from
-def fetch_xml(url): 
-  # If you hit the server too hard you get bounced for a while, so
-  # we have to be nice
-  time.sleep(1)
-  try:
-    response = urlopen(url)
-  except HTTPError as e:
-    # If the server thinks we have been too pushy back off a bit
-    if e.code == 429:
-      print ("Too many requests by {}".format(url))
-      time.sleep(30)
-      return fetch_xml(url)
-    else:
-      raise e
-
-  xml = response.read()
-  try:
-    root = ET.fromstring(xml)
-    if root.tag == 'message':
-      print ("Received wait request for {}".format(url))
-      time.sleep(5)
-      return fetch_xml(url)
-
-  except xml.etree.ElementTree.ParseError:
-    sys.stderr.write("Couldn't read %s" % (xml,))
-    raise
-    
-  return root
   
 # Get the details of the list  
 url = "https://www.boardgamegeek.com/xmlapi/geeklist/{}".format(listid)
-xml = fetch_xml(url)
+xml = fetch_xml(url, cookie["appToken"])
 
 # Get the items so we can fill in the spider links
 listitems = []

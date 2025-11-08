@@ -1,5 +1,4 @@
 import sqlite3
-from fetch_xml import fetch_xml
 import re
 import requests
 import operator

@@ -11,6 +11,7 @@ import yaml
 import math
 from urllib.request import urlopen
 from urllib.error import HTTPError
+from fetch_xml import fetch_xml
 
 from dateutil.relativedelta import *
 
@@ -22,53 +23,14 @@ def load_expansion_list(file):
   with open(file, 'r') as stream:
     return yaml.safe_load(stream)
 
-# Keep trying to get the XML until it returns
-# url - The URL to fetch the XML document from
-def fetch_xml(url): 
-  # If you hit the server too hard you get bounced for a while, so
-  # we have to be nice
-  time.sleep(2)
-  try:
-    #print("Fetch from {}".format(url))
-    response = urlopen(url)
-  except HTTPError as e:
-    # If the server thinks we have been too pushy back off a bit
-    if e.code == 429:
-      print ("Too many requests by {}".format(url))
-      time.sleep(30)
-      return fetch_xml(url)
-    else:
-      raise e
-  except urllib.error.URLError as t:
-    print("Network error")
-    time.sleep(30)
-    return fetch_xml(url)
-  
-  xml = response.read()
-  # Work around for a bug where character 11 was included but XML parsing couldn't handle it
-  #xml = str(xml,"UTF-8")
-  #xml = xml.replace("\x0b", " ")
-  try:
-    root = ET.fromstring(xml)
-    if root.tag == 'message':
-      print ("Received wait request for {}".format(url))
-      time.sleep(5)
-      return fetch_xml(url)
-
-  except xml.etree.ElementTree.ParseError:
-    print("Couldn't read from url {}".format(url))
-    raise
-    
-  return root
-
 # Get a map of game rootids to a game entry.
 # The game entry is just the name and root id at this time
 # geeklist - Id of geeklist
 # expansions - Set of games in expansions. Games in expansions aren't added to the games list.
-def fetch_games(geeklist,expansions):
+def fetch_games(geeklist, expansions, bearer_token):
 
   url = 'https://www.boardgamegeek.com/xmlapi/geeklist/%d' % (geeklist,)
-  xml = fetch_xml(url)
+  xml = fetch_xml(url, bearer_token)
 
   games = {}
 
@@ -119,11 +81,11 @@ def build_games_sources(games,expansions):
 
 # Add the game players, last played date and any play information 
 # gameEntry - A component of a game to fill in the details
-def fill_plays(gameEntry,startDate,endDate,filterCount):
+def fill_plays(gameEntry,startDate,endDate,filterCount, bearerToken):
   urlformat = "https://www.boardgamegeek.com/xmlapi2/plays?id={}&mindate={}&maxdate={}&page={}"
   url = urlformat.format(gameEntry['gameid'],startDate.isoformat(),endDate.isoformat(),1)
 
-  plays = fetch_xml(url)
+  plays = fetch_xml(url, bearer_token=bearerToken)
   # Number of play entries, not total play count
   totalPlays = int(plays.attrib['total'])
   originalPlays = 0
@@ -146,7 +108,7 @@ def fill_plays(gameEntry,startDate,endDate,filterCount):
       # Fetch new data for the subsequent pages 
       if page > 1:
         url = urlformat.format(gameEntry['gameid'],startDate.isoformat(),endDate.isoformat(),page)
-        plays = fetch_xml(url)
+        plays = fetch_xml(url, bearer_token=bearerToken)
 
       # Extract the play information
       for play in plays.iter('play'):
@@ -177,7 +139,7 @@ def fill_plays(gameEntry,startDate,endDate,filterCount):
     # descending order so the first entry is the one we want to check
     playToDate = startDate  - timedelta(days=1)
     url = "https://www.boardgamegeek.com/xmlapi2/plays?id={}&maxdate={}".format(gameEntry['gameid'],playToDate.isoformat())
-    lastPlays = fetch_xml(url)
+    lastPlays = fetch_xml(url, bearer_token=bearerToken)
     if int(lastPlays.attrib['total']) == 0:
       gameEntry['firstPlayed'] = True
     else:
@@ -268,6 +230,10 @@ def spider_games(allgames):
 # 2 - Date (optional, current month if not set)
 # 3 - Output file (optional, config file set if not set)
 
+# config requires "appToken" for XML access
+with open('config.json') as json_file:
+  cookie = json.load(json_file)
+
 configuration = load_expansion_list(sys.argv[1])
 
 # Default to the last month, or use a custom date
@@ -295,7 +261,7 @@ for expansionEntry in expansions.values():
 sourceLists = configuration['sourceLists']
 allgames = {}
 for listid in sourceLists:
-  allgames.update(fetch_games(listid,expansionComponents))
+  allgames.update(fetch_games(listid,expansionComponents, cookie["appToken"]))
 
 # This list is too big to test initially, just grab first 40
 #testingGames = {}
@@ -313,7 +279,7 @@ playsTo = date(capturedate.year, capturedate.month, 1) + relativedelta(day=31)
 for idx,game in enumerate(allgames.values()):
   print("Filling game {}, {:.2f}%".format(game['rootname'],(idx/len(allgames))*100))
   for comp in game['components']:
-    fill_plays(comp,playsFrom,playsTo,configuration['filter'])
+    fill_plays(comp,playsFrom,playsTo,configuration['filter'], cookie["appToken"])
 
 # Second pass to remove duplicates and the prepare game summaries
 for game in allgames.values():

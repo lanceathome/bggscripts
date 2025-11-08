@@ -1,5 +1,4 @@
 import sqlite3
-from fetch_xml import fetch_xml
 import re
 import requests
 import operator
@@ -9,14 +8,20 @@ import math
 import get_turtle_result
 import store_turtle_result
 import show_turtle_result
+import json
 # pip install Mako
 # from mako.template import Template
 
+# config requires "bggusername" and "bggpassword", where the password is the session key,
+# not the raw password
+with open('config.json') as json_file:
+  cookie = json.load(json_file)
+
 # Get the latest list or a specific one
 if (len(sys.argv) > 1):
-   compxml = get_turtle_result.getCompetitionXml(sys.argv[1])
+   compxml = get_turtle_result.getCompetitionXml(sys.argv[1], cookie["appToken"])
 else:
-   compxml = get_turtle_result.getLatestCompetition()
+   compxml = get_turtle_result.getLatestCompetition(cookie["appToken"])
 
 # Save the information in the database
 conn = sqlite3.connect('goldenTurtle.db')

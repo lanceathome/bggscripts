@@ -79,3 +79,8 @@ And to get just those people for encouragement awards
 ```
 select user, entered from (select  user,count(*) as entered,sum(points) as pts from results where user in (select user from results where month='2019-11-01') group by user) where pts=0;
 ```
+
+## Configuration File
+
+Access to the BGG XML API requires a bearer token. This is set in the config.json file with the key
+"appToken" and is read by all scripts that access the XML data.

@@ -179,6 +179,10 @@ expansions: {
              361644: [383239], # steel-rift
               43555: [419035], # this-quars-war
               25415: [302007], # bulldogs-away-modern-fast-attack-craft-rules-1950
+              60076: [75294], # naval-thunder-battleship-row
+             289428: [350421, 349885, 351240], # rapture
+             193699: [451415, 457756], # bolt-action-konflikt-47
+             337261: [453871], # forbidden-psalm
 
               15985: [712, 2288, 3071, 1676, 10223, 212445, 318472], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333, 350793], # Deadzone 
@@ -191,7 +195,7 @@ expansions: {
               11170: [27976, 54361, 368557], # Heroscape
                3439: [198142, 327482, 352211], #Heroclix
               32674: [248641, 257168, 257169], # Monsterpocalypse,
-             224597: [261594, 287754, 326624, 350072, 337397, 362477, 373084, 387535, 396015, 403634, 420041, 433099], # Warhammer Underworlds Shadespire
+             224597: [261594, 287754, 326624, 350072, 337397, 362477, 373084, 387535, 396015, 403634, 420041, 433099, 456134], # Warhammer Underworlds Shadespire
              287899: [314837, 350758], # Aeronautica Imperialis
              247104: [320698, 359065, 427150], # Blitz bowl
              186751: [331398, 415112], # Mythic battles
