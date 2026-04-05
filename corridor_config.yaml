@@ -3,6 +3,7 @@
   filter: 6,
   outfile: "corridor-{}.yaml",
   expansions: { 
+    174430: [295770, 291457], # gloomhaven
     124708: [159458, 144777], # Mice and Mystics
     164153: [265523, 278326, 251066, 226839, 194897, 181621], # Imperial Assault
     156474: [154939], # MERCS
@@ -33,5 +34,7 @@
     240271: [324657], # core-space
     173805: [348877, 438191], # lobotomy
     243759: [334310], # hellboy-the-board-game
+    204286: [257089], # big-trouble-in-little-china-the-game
+    174430: [291457, 295770], # gloomhaven
   }
 }

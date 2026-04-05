@@ -43,7 +43,7 @@ expansions: {
               12385: [211086], # Bladestorm
              118207: [154500, 158399], # Victory Decision WW2
               19719: [29891], # Contemptible Little Armies,
-              85204: [198670, 288798, 339775], # Kings of War
+              85204: [198670, 288798, 339775, 457872], # Kings of War
               20587: [56641, 178496, 108691, 241384], # Nuts!
               12585: [28451, 119608], # Baptism of Fire
              159160: [128154, 138515, 165570], # Battlegroup (Kursk)
@@ -57,12 +57,12 @@ expansions: {
              220248: [191312, 264685], # Grimdark Future
              220249: [264748, 192139], # Age of Fantasy
              137958: [236934, 174116, 236938, 357463, 174116], # Wild West Exodus
-             177354: [232166, 317519, 324277, 192186, 222317, 235098, 287958], # Frostgrave
+             177354: [232166, 317519, 324277, 192186, 192187, 216335, 222317, 235098, 287958, 353657, 367474, 391663, 416734, 444817], # Frostgrave
              103670: [216066], # Dust Warfare
               13936: [122751, 172696, 229988], # Dark Age
              137141: [237181, 300420], # Batman
               12129: [12128, 64778], # Giant Monster Rampage 
-             207653: [154307, 256066, 344697, 262067, 370671, 374002, 359563, 390358, 429262, 432676], # Kill Team
+             207653: [154307, 256066, 344697, 262067, 370671, 374002, 359563, 390358, 429262, 432676, 446810], # Kill Team
              195242: [256962, 304620], # Tanks
               28805: [259435, 260234, 375439, 134009, 435841], # Lord of the Rings
              139771: [240143, 275972, 376779, 376794], # Star Trek Attack Wing
@@ -74,7 +74,7 @@ expansions: {
                3109: [122821, 33259, 226873, 416309], # Starmada
               41837: [113825], # Force on Force
              233571: [283474, 361686], # Star Wars: Legion
-              37352: [281151, 265477, 281121], # Fistful of Lead
+              37352: [281151, 265477, 281121, 451271], # Fistful of Lead
               31949: [95662], # Fistful of TOWs
               15827: [224832, 279418, 303507], # Blitzkrieg Commander
              297160: [297165], # From Gilgamesh to Grant
@@ -110,7 +110,7 @@ expansions: {
              303317: [322539], # warcaster-neo-mechanika
              114504: [346138], # carnevale-vicious-fighting-along-canals-venice
               70222: [353488, 282596, 263171, 390350], # 7tv
-             126021: [174046, 288809], # dropzone-commander
+             126021: [174046, 288809, 463178], # dropzone-commander
               26129: [39786, 175696, 339250, 339249], # heavy-gear-blitz
                3864: [176560], # mechwarrior-dark-age
               85652: [174045, 196135, 334606, 404884], # dystopian-wars
@@ -183,8 +183,17 @@ expansions: {
              289428: [350421, 349885, 351240], # rapture
              193699: [451415, 457756], # bolt-action-konflikt-47
              337261: [453871], # forbidden-psalm
+             169422: [208064, 457430], # laserblade
+              16740: [58538, 193862, 299868], # grand-fleets
+             218383: [319347], # swordpoint-ancient-and-medieval-wargames-rules
+             456036: [338124, 456037], # warriors-of-athena-heroes
+               4985: [439647], # warmaster
+             299223: [299224, 308355, 336987], # squad-hammer-dirt-simple-war-gaming-for-many-setti
+             293260: [297557], # corps-command-iv-warfare-in-the-age-of-napoleon
+              10916: [13411, 148191], # spearhead
+              17646: [17657], # shock-force-battles-in-the-remnants-of-america
 
-              15985: [712, 2288, 3071, 1676, 10223, 212445, 318472], # Bloodbowl and sub entries
+              15985: [712, 2288, 3071, 1676, 10223, 212445, 318472, 457587], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333, 350793], # Deadzone 
              129731: [144144, 145141, 146014, 149178, 155411, 224141], # Dreadball
              101929: [113667, 136606], # Sergeants Miniatures Game

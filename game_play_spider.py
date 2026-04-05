@@ -24,14 +24,22 @@ with open(sys.argv[1], 'r') as stream:
 
 listid = int(sys.argv[2])
 
+# Users must submit a session id to authenticate POST requests now
+# Need to find how to get this programmatically, for now just pass it in as an argument
+sessionid = str(sys.argv[3])
+
+headers = {
+  "Authorization": f"GeekAuth {sessionid}",
+}
+
 playdate = date.fromisoformat( config['playDate'] + "-01" )
 
-session = requests.Session()
+# session = requests.Session()
 
-url = 'https://boardgamegeek.com/geeklist/item/save'
-res = session.get(url, cookies=cookie)
-sessionId = session.cookies.get_dict()['SessionID']
-headers = {'authorization': 'GeekAuth ' + sessionId}
+# url = 'https://boardgamegeek.com/geeklist/item/save'
+# res = session.get(url, cookies=cookie)
+# sessionId = session.cookies.get_dict()['SessionID']
+# headers = {'authorization': 'GeekAuth ' + sessionId}
   
 # Get the details of the list  
 url = "https://www.boardgamegeek.com/xmlapi/geeklist/{}".format(listid)
@@ -128,7 +136,7 @@ for gidx,game in enumerate(gamelist):
     
     queryData = {
       "item": {
-        "type": "things",
+        "type": "thing",
         "id": game['highestPlayed']
       },
       "imageid": None,
@@ -139,8 +147,9 @@ for gidx,game in enumerate(gamelist):
     }
     
     query = json.dumps(queryData)
-    url = "https://api.geekdo.com/api/listitems/{}".format(item["listid"])
-    res = session.patch(url,data=query,cookies=cookie,headers=headers)
+    url = f"https://api.geekdo.com/api/listitem/{item["listid"]}"
+    res = requests.patch(url, data=query, headers=headers)
+    res.raise_for_status()
 
 commentAdd = []
 

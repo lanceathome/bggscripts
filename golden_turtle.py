@@ -3,7 +3,7 @@ import re
 import requests
 import operator
 import sys
-from random import random
+from random import random, randint
 import math
 import get_turtle_result
 import store_turtle_result
@@ -32,11 +32,13 @@ compresults = get_turtle_result.getCompetitionResults(compxml)
 hallOfFamers = store_turtle_result.getHallOfFame(c)
 winners = get_turtle_result.getPlaces(compresults['results'],hallOfFamers)
 # Find who the random thumber is
-thumber = int( math.floor(random() * len(compresults['voters'])))
+thumber = randint(0, len(compresults['voters'])-1)
+# Get the thumber name
+thumber_name = get_turtle_result.getVoterName(thumber)
 
 # Save the information
 store_turtle_result.addResult(c,compresults['month'],compresults['results'],winners)
-store_turtle_result.addThumber(c,compresults['month'],compresults['voters'][thumber], len(compresults['voters']))
+store_turtle_result.addThumber(c,compresults['month'],thumber_name, len(compresults['voters']))
 
 # Ask the user which entries should win the encouragement award
 encourage = store_turtle_result.getEncourageRecommendation(c,compresults['month'])
@@ -59,4 +61,4 @@ resultTable = store_turtle_result.getTable(c)
 encouragementTable = store_turtle_result.getEncouragements(c,compresults['month'])
 
 # Output the results
-show_turtle_result.outputResults(winners, resultTable, compresults['voters'][thumber], compresults['month'], hallOfFamers, encouragementTable, len(compresults['voters']))
+show_turtle_result.outputResults(winners, resultTable, thumber_name, compresults['month'], hallOfFamers, encouragementTable, len(compresults['voters']))
