@@ -7,6 +7,7 @@ from random import random
 import math
 import time
 import datetime
+import json
 
 def getLatestCompetition(bearer_token):
    # Download the Golden Turtle list and find the last entry on it
@@ -19,22 +20,21 @@ def getLatestCompetition(bearer_token):
    # print(compid)
 
    # Now get the competition information
-   return getCompetitionXml(compid)
+   return getCompetitionXml(compid, bearer_token)
 
 def getCompetitionXml(compid, bearer_token):
    compxml = fetch_xml('https://www.boardgamegeek.com/xmlapi/geeklist/{}'.format(compid), bearer_token)
    return compxml;
 
 def getVotesForGame(listitem):
-   query = {'itemtype': 'listitem', 'action':'recspy', 'itemid':listitem}
-   r = requests.post("https://boardgamegeek.com/geekrecommend.php", data=query)
-   prog = re.compile(r">(\w*)</a>")
-
-   voters = set()
-   for item in prog.findall(r.text):
-      voters.add(item)
-
+   r = requests.get(f"https://api.geekdo.com/api/listitems/{listitem}/reactions")
+   voters = set(r.json()["users"])
    return voters
+
+def getVoterName(userid):
+   r = requests.get(f"https://api.geekdo.com/api/users/{userid}")
+   user_info = r.json()["username"]
+   return user_info
 
 def getCompetitionMonth(compxml):
    postdate = compxml.find('postdate')
@@ -96,11 +96,14 @@ def getPlaces(results,halloffame):
    return rows
 
 if __name__ == "__main__":
+   with open('config.json') as json_file:
+      cookie = json.load(json_file)
+
    # Get the latest list or a specific one
    if (len(sys.argv) > 1):
-      compxml = getCompetitionXml(sys.argv[1])
+      compxml = getCompetitionXml(sys.argv[1], bearer_token=cookie["appToken"])
    else:
-      compxml = getLatestCompetition()
+      compxml = getLatestCompetition(bearer_token=cookie["appToken"])
 
    compresults = getCompetitionResults(compxml)
 
@@ -110,4 +113,5 @@ if __name__ == "__main__":
 
    print()
    thumber = int( math.floor(random() * (len(compresults['voters'])) ))
-   print("Random thumber is {} of {}".format( compresults['voters'][thumber], len(compresults['voters']) ))
+   thumber_name = getVoterName(compresults['voters'][thumber])
+   print("Random thumber is {} of {}".format(thumber_name, len(compresults['voters']) ))

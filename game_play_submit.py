@@ -1,14 +1,9 @@
-import calendar
 import xml.etree.ElementTree as ET
 import sys
-from datetime import date, timedelta
-import datetime
+from datetime import date
 import json
-import time
 import yaml
-import math
 from urllib.request import urlopen
-from urllib.error import HTTPError
 import requests
 
 from dateutil.relativedelta import *
@@ -25,6 +20,13 @@ with open(sys.argv[1], 'r') as stream:
 
 listid = int(sys.argv[2])
 
+# Users must submit a session id to authenticate POST requests now
+# Need to find how to get this programmatically, for now just pass it in as an argument
+sessionid = str(sys.argv[3])
+
+headers = {
+  "Authorization": f"GeekAuth {sessionid}",
+}
 
 # Default to the last month, or use a custom date
 playdate = date.fromisoformat( config['playDate'] + "-01" )
@@ -32,13 +34,6 @@ ignorePlayDate = date( playdate.year, playdate.month, 1)
 ignorePlayDate = ignorePlayDate+relativedelta(months=-1)
 ignorePlayMonth = date(ignorePlayDate.year, ignorePlayDate.month, 1).strftime("%Y-%m")
 print ("Dont show plays in {}".format(ignorePlayMonth))
-
-session = requests.Session()
-
-pageUrl = 'https://boardgamegeek.com/geeklist/{}'.format(listid)
-url = 'https://boardgamegeek.com/geeklist/item/save'
-res = session.get(url, cookies=cookie)
-sessionId = session.cookies.get_dict()['SessionID']
 
 gameIndex = 0
 
@@ -116,39 +111,9 @@ for game in config['games']:
     comments.append("Last played in {}".format(lastPlayedDate.strftime("%B, %Y")))
   comments.append("")
   
-  # If there are any game spider results shown them now
-#  linkages = []
-#  if len(game['crossplays']) > 0:
-    # Sort them by number of plays
-#    sortedLinks = sorted(game['crossplays'].items(), key=lambda x:x[1], reverse=True)
-#    item['crossplays'].sort(key=lambda cp: cp['players'])
-
-#    comments.append("")
-#    comments.append("Number of players also playing:")
-
-#    line = ""
-#    lastPlayCount = -1
-#    idx = 0
-#    for cp in sortedLinks:
-#      if cp[1] == lastPlayCount:
-#        if idx%2 == 0:
-#          line = line + "[i]"
-#        line = line + "[thing={}][/thing]".format(cp[0])
-#        if idx%2 == 0:
-#          line = line + "[/i]"
-#        idx = idx+1
-#      else:
-#        if len(line) > 0:
-#          comments.append(line)
-#        line = "[b]{}[/b] for [thing={}][/thing]".format(cp[1], cp[0])
-#        lastPlayCount = cp[1]
-#        idx = 0
-
-#    comments.append(line)
-
   queryData = {
     "item": {
-      "type": "things",
+      "type": "thing",
       "id": game['highestPlayed']
     },
     "imageid": None,
@@ -160,9 +125,9 @@ for game in config['games']:
   
   query = json.dumps(queryData)
 
-  url = "https://api.geekdo.com/api/geeklists/{}/listitems".format(listid)
-  headers = {'authorization': 'GeekAuth ' + sessionId}
+  url = f"https://api.geekdo.com/api/geeklist/{listid}/listitem"
   
   print("POSTing results for {}".format(game['rootname']))
 
-  res = session.post(url, data=query, cookies=cookie, headers=headers)
+  res = requests.post(url, data=query, headers=headers)
+  res.raise_for_status()
