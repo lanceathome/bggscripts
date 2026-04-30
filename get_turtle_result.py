@@ -3,7 +3,7 @@ import re
 import requests
 import operator
 import sys
-from random import random
+from random import random, randint
 import math
 import time
 import datetime
@@ -27,12 +27,40 @@ def getCompetitionXml(compid, bearer_token):
    return compxml;
 
 def getVotesForGame(listitem):
-   r = requests.get(f"https://api.geekdo.com/api/listitems/{listitem}/reactions")
-   voters = set(r.json()["users"])
-   return voters
+   """Get the voter ids for the entry item.
+
+   Args:
+       listitem (int | str): List item id
+
+   Returns:
+       list: A list of voter IDs.
+   """
+   
+   all_voters = set()
+   
+   start_query = f"https://api.geekdo.com/api/listitem/{listitem}/reaction"
+   while start_query:
+      r = requests.get(start_query)
+      r.raise_for_status()
+      data = r.json()
+      voters = set(data["users"])
+      all_voters.update(voters)
+      next_link = next(("https://api.geekdo.com" + link["uri"] for link in data["links"] if link["rel"] == "next"), None)
+      start_query = next_link
+   
+   return list(all_voters)
 
 def getVoterName(userid):
-   r = requests.get(f"https://api.geekdo.com/api/users/{userid}")
+   """
+   Get the name of a user by their id value.
+
+   Args:
+       userid (str | int): Username of the account.
+
+   Returns:
+       str: Display name of the user.
+   """
+   r = requests.get(f"https://api.geekdo.com/api/user/{userid}")
    user_info = r.json()["username"]
    return user_info
 
@@ -112,6 +140,7 @@ if __name__ == "__main__":
       print("{} scored {} for {}".format(entry[0],entry[2],entry[1]))
 
    print()
-   thumber = int( math.floor(random() * (len(compresults['voters'])) ))
+   
+   thumber = randint(0, len(compresults['voters'])-1)
    thumber_name = getVoterName(compresults['voters'][thumber])
    print("Random thumber is {} of {}".format(thumber_name, len(compresults['voters']) ))
