@@ -3,9 +3,9 @@ sourceLists: [24318,195504],
 filter: 6,
 outfile: "tabletop-{}.yaml",
 expansions: { 
-             203800: [161126, 36367], # Dust Tactics/Battlefield/1947
+             203800: [161126, 36367, 101786], # Dust Tactics/Battlefield/1947
               52328: [147537, 281657, 97332, 247069, 187676, 444876], # Malifaux 1.5/2/3
-               2162: [11106, 316655, 229427, 160044, 126613, 37165, 13362, 203122, 33048, 145847, 314243, 231036, 314252, 317716, 317866, 317865, 386136, 395372, 395373, 395374 ], # Warhammer 40K
+               2162: [11106, 316655, 229427, 160044, 126613, 37165, 13362, 203122, 33048, 145847, 314243, 231036, 314252, 317716, 317866, 317865, 386136, 395372, 395373, 395374, 472487, 473362 ], # Warhammer 40K
               10431: [5316], # Epic Armageddon with Epic 40K
              119866: [31552, 121016, 129165, 108842, 22510, 39596, 9203], # Wings of Glory and Wings of War WWI
              107148: [131183, 121042, 125679, 42306, 39333, 36482, 216710], # Wings of Glory WWII
@@ -113,7 +113,7 @@ expansions: {
              126021: [174046, 288809, 463178], # dropzone-commander
               26129: [39786, 175696, 339250, 339249], # heavy-gear-blitz
                3864: [176560], # mechwarrior-dark-age
-              85652: [174045, 196135, 334606, 404884], # dystopian-wars
+              85652: [174045, 196135, 334606, 404884, 466235], # dystopian-wars
              319902: [342974], # Don't look back
              296710: [311397], # Judge Dredd
               29026: [259369], # OGRE miniatures
@@ -192,6 +192,7 @@ expansions: {
              293260: [297557], # corps-command-iv-warfare-in-the-age-of-napoleon
               10916: [13411, 148191], # spearhead
               17646: [17657], # shock-force-battles-in-the-remnants-of-america
+             300724: [11432], # harpoon-v-modern-tactical-naval-combat-1955-2020
 
               15985: [712, 2288, 3071, 1676, 10223, 212445, 318472, 457587], # Bloodbowl and sub entries
              142063: [159722, 170571, 170569, 175291, 197333, 350793], # Deadzone 
